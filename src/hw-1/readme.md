@@ -40,7 +40,7 @@ VAAssignment1-3
 VAAssignment1-4,5
 
 
->Do color transfer to detect orange and make it to white part with black background color, and save these output images "1.jpg"~"6.jpg" corresponding to the input images "image1.jpg"~"image6.jpg".
+>Do color transfer to detect orange and make it to white part with black background color, and save these output images "1.jpg" to "6.jpg" corresponding to the input images "image1.jpg" to "image6.jpg".
 
 
 VAAssignment1-6
@@ -49,5 +49,5 @@ VAAssignment1-6
 >Add and remove S&P noise in an image. The removing process using median filter function cv2.medianBlur(). The image with S&P noise will be save as "saltPepperImage.jpg", and the output of removing noise will show on the screen.
 
 ## Test
-For testing, we should execute file as sequence: VAAssignment1-1~VAAssignment1-6.
+For testing, we should execute file as sequence: VAAssignment1-1 to VAAssignment1-6.
 

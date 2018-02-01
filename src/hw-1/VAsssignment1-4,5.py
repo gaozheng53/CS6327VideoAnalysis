@@ -32,12 +32,12 @@ def transcolor(add, count):
 
 
 t0 = time.time()
-transcolor("/Users/zhenggao/PycharmProjects/Practice/src/image1.jpg", 1)
-transcolor("/Users/zhenggao/PycharmProjects/Practice/src/image2.jpg", 2)
-transcolor("/Users/zhenggao/PycharmProjects/Practice/src/image3.jpg", 3)
-transcolor("/Users/zhenggao/PycharmProjects/Practice/src/image4.jpg", 4)
-transcolor("/Users/zhenggao/PycharmProjects/Practice/src/image5.jpg", 5)
-transcolor("/Users/zhenggao/PycharmProjects/Practice/src/image6.jpg", 6)
+transcolor("image1.jpg", 1)
+transcolor("image2.jpg", 2)
+transcolor("image3.jpg", 3)
+transcolor("image4.jpg", 4)
+transcolor("image5.jpg", 5)
+transcolor("image6.jpg", 6)
 
 print("The average time is: " + str((time.time() - t0) / 6))
 cv2.destroyAllWindows()

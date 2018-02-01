@@ -2,7 +2,7 @@
 
 import cv2
 
-vc = cv2.VideoCapture('outpy.avi')  # read .avi file
+vc = cv2.VideoCapture('../outpy.avi')  # read .avi file
 c = 1
 
 if vc.isOpened():
