@@ -1,0 +1,28 @@
+CS 6327 Video Analytics Assignment 1
+Instructor: B. Prabhakaran         TA: Kevin Desai <kevin.desai@utdallas.edu>
+This assignment is due on January 31, 2018 at 23:59. Only submission on eLearning is accepted.
+Descriptions
+
+1.	Capture a video-clip in real-time using a video camera - the video should have a reasonably large object such as a ball or an object of one color. Example, a blue ball or a green apple.
+
+2.	Grab a frame in the captured video (i.e., the live video stream) so that you can manipulate it like an image.
+
+3.	Convert the image from RGB to HSV color space.
+
+4.	Find the "colored object" in the image using color - e.g., mark the colored area as white in dark background. (Choose any methods - color detection, circle detection, etc).
+
+5.	Repeat step 4 on subsequent few more (say 5 or 6) video frames. Calculate time taken per video frame for step 4 (i.e., average time over the 5 or 6 frames) and report whether you are able to do step 4 it in real-time？？
+
+6.	Choose one of the video frames. Add salt and pepper noise with the noise density 0.02 to I to create a noisy image N2. Write your own code to remove the noise from the image N2. Let's say the image obtained after noise removal is H2. Tune different parameters of noise removal scheme to obtain a visually good output.
+
+
+Desired Output
+a.	Grabbed image display
+b.	Colored object marking on the image
+Submission in eLearning (elearning.utdallas.edu)
+Late Submissions
+Late submissions accepted with a penalty of 10% per day.
+Rubrics:
+Each step in the description above will carry approximately equal weightage.
+Demo will be needed to the TA.
+
