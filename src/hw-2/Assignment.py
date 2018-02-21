@@ -7,16 +7,17 @@ lower_white = np.array([40, 30, 190], dtype=np.uint8)
 upper_white = np.array([100, 100, 255], dtype=np.uint8)
 # initial list of tracking points
 mybuffer = 300
+totaldistance = 0  # calculate total distance during the whole process
 pts = deque(maxlen=mybuffer)
 camera = cv2.VideoCapture('cs6327-a2.mp4')
-
 size = (int(camera.get(cv2.CAP_PROP_FRAME_WIDTH)),
         int(camera.get(cv2.CAP_PROP_FRAME_HEIGHT)))
-print(size)
 time.sleep(2)
 
 while True:
     (ret, frame) = camera.read()
+    if not ret:
+        break
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     # disregard some area
     hsv[0:1289][0:163] = [0, 0, 0]  # top
