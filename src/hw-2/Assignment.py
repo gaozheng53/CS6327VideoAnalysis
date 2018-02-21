@@ -2,22 +2,26 @@ from collections import deque
 import numpy as np
 import cv2
 import time
+import math
 
 lower_white = np.array([40, 30, 190], dtype=np.uint8)
 upper_white = np.array([100, 100, 255], dtype=np.uint8)
 # initial list of tracking points
 mybuffer = 300
+countframe = 0
 totaldistance = 0  # calculate total distance during the whole process
 pts = deque(maxlen=mybuffer)
 camera = cv2.VideoCapture('cs6327-a2.mp4')
 size = (int(camera.get(cv2.CAP_PROP_FRAME_WIDTH)),
         int(camera.get(cv2.CAP_PROP_FRAME_HEIGHT)))
+totaltime = camera.get(cv2.CAP_PROP_FRAME_COUNT)/camera.get(cv2.CAP_PROP_FPS)
 time.sleep(2)
 
 while True:
     (ret, frame) = camera.read()
     if not ret:
         break
+    countframe += 1
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     # disregard some area
     hsv[0:1289][0:163] = [0, 0, 0]  # top
@@ -42,11 +46,11 @@ while True:
         # calculate center
         center = (int(M["m10"] / M["m00"]), int(M["m01"] / M["m00"]))
         # only mark when r < 16
-        if radius < 19:
-            cv2.circle(frame, (int(x), int(y)), 10, (0, 255, 255), 2)
-            cv2.circle(frame, center, 5, (0, 0, 255), -1)
-            # add center to deque
-            pts.appendleft(center)
+        # if radius < 19:
+        cv2.circle(frame, (int(x), int(y)), 10, (0, 255, 255), 2)
+        cv2.circle(frame, center, 5, (0, 0, 255), -1)
+        # add center to deque
+        pts.appendleft(center)
 
     blackimg = np.zeros([size[1], size[0], 3], dtype=np.uint8)
     blackimg.fill(0)
@@ -59,12 +63,20 @@ while True:
         # if pts[i][0] - pts[i - 1][0] < 180 and pts[i][1] - pts[i - 1][1] < 180:
         cv2.line(frame, pts[i - 1], pts[i], (255, 255, 255), 2)
         cv2.line(blackimg, pts[i - 1], pts[i], (255, 255, 255), 2)
+        totaldistance += math.sqrt(math.pow(pts[i][1]-pts[i-1][1],2)+math.pow(pts[i][0]-pts[i-1][0],2))
+
     cv2.imshow('Frame', frame)
     cv2.imwrite("path.jpg", blackimg)
+
 
     k = cv2.waitKey(5) & 0xFF
     if k == 27:
         break
 
+
 camera.release()
 cv2.destroyAllWindows()
+
+
+print("time = ",totaltime,"(s)")
+print("speed = ",totaldistance/totaltime,"(pixel/second)")
