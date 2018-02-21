@@ -23,13 +23,9 @@ while True:
         break
     countframe += 1
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-    # disregard some area
-    hsv[0:1289][0:163] = [0, 0, 0]  # top
-    hsv[0:1289][835:1100] = [0, 0, 0]  # bottom
     mask = cv2.inRange(hsv, lower_white, upper_white)
     mask = cv2.erode(mask, None, iterations=3)
     mask = cv2.dilate(mask, None, iterations=3)
-    # cv2.imshow("mask", mask)
 
     # detect contour
     cnts = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
@@ -60,10 +56,10 @@ while True:
         if pts[i - 1] is None or pts[i] is None:
             continue
         # draw line
-        # if pts[i][0] - pts[i - 1][0] < 180 and pts[i][1] - pts[i - 1][1] < 180:
-        cv2.line(frame, pts[i - 1], pts[i], (255, 255, 255), 2)
-        cv2.line(blackimg, pts[i - 1], pts[i], (255, 255, 255), 2)
-        totaldistance += math.sqrt(math.pow(pts[i][1]-pts[i-1][1],2)+math.pow(pts[i][0]-pts[i-1][0],2))
+        if pts[i][0] - pts[i - 1][0] < 180 and pts[i][1] - pts[i - 1][1] < 180:
+            cv2.line(frame, pts[i - 1], pts[i], (255, 255, 255), 2)
+            cv2.line(blackimg, pts[i - 1], pts[i], (255, 255, 255), 2)
+            totaldistance += math.sqrt(math.pow(pts[i][1]-pts[i-1][1],2)+math.pow(pts[i][0]-pts[i-1][0],2))
 
     cv2.imshow('Frame', frame)
     cv2.imwrite("path.jpg", blackimg)
