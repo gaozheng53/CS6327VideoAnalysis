@@ -25,8 +25,8 @@ while True:
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     mask = cv2.inRange(hsv, lower_white, upper_white)
     mask = cv2.erode(mask, None, iterations=3)
-    mask = cv2.dilate(mask, None, iterations=3)
-
+    mask = cv2.dilate(mask, None, iterations=7)
+    # cv2.imshow("mask",mask)
     # detect contour
     cnts = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[-2]
 
@@ -42,11 +42,11 @@ while True:
         # calculate center
         center = (int(M["m10"] / M["m00"]), int(M["m01"] / M["m00"]))
         # only mark when r < 16
-        # if radius < 19:
-        cv2.circle(frame, (int(x), int(y)), 10, (0, 255, 255), 2)
-        cv2.circle(frame, center, 5, (0, 0, 255), -1)
+        if radius<20:
+            cv2.circle(frame, (int(x), int(y)), int(radius), (0, 255, 255), 2)
+            cv2.circle(frame, center, 5, (0, 0, 255), -1)
         # add center to deque
-        pts.appendleft(center)
+            pts.appendleft(center)
 
     blackimg = np.zeros([size[1], size[0], 3], dtype=np.uint8)
     blackimg.fill(0)
@@ -56,7 +56,7 @@ while True:
         if pts[i - 1] is None or pts[i] is None:
             continue
         # draw line
-        if pts[i][0] - pts[i - 1][0] < 180 and pts[i][1] - pts[i - 1][1] < 180:
+        if pts[i][0] - pts[i - 1][0] < 150 and pts[i][1] - pts[i - 1][1] < 150 :
             cv2.line(frame, pts[i - 1], pts[i], (255, 255, 255), 2)
             cv2.line(blackimg, pts[i - 1], pts[i], (255, 255, 255), 2)
             totaldistance += math.sqrt(math.pow(pts[i][1]-pts[i-1][1],2)+math.pow(pts[i][0]-pts[i-1][0],2))
@@ -74,5 +74,4 @@ camera.release()
 cv2.destroyAllWindows()
 
 
-print("time = ",totaltime,"(s)")
 print("speed = ",totaldistance/totaltime,"(pixel/second)")
