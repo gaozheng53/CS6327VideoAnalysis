@@ -71,7 +71,6 @@ while True:
         # draw line
         cv2.line(frame, pts[i - 1], pts[i], (255, 255, 255), 2)
         cv2.line(black_img, pts[i - 1], pts[i], (255, 255, 255), 2)
-        total_distance += math.sqrt(math.pow(pts[i][1] - pts[i - 1][1], 2) + math.pow(pts[i][0] - pts[i - 1][0], 2))
 
     cv2.imshow('Frame', frame)
     cv2.imwrite("path.jpg", black_img)
@@ -82,5 +81,10 @@ while True:
 
 camera.release()
 cv2.destroyAllWindows()
+
+for i in range(1, len(pts)):
+    if pts[i - 1] is None or pts[i] is None:
+        continue
+    total_distance += math.sqrt(math.pow(pts[i][1] - pts[i - 1][1], 2) + math.pow(pts[i][0] - pts[i - 1][0], 2))
 
 print("speed = ", total_distance / totaltime, "(pixel/second)")
