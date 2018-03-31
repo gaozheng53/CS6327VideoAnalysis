@@ -12,7 +12,6 @@ import cv2
 from scipy.ndimage.measurements import label
 
 
-
 color_space = 'RGB'  # Can be RGB, HSV, LUV, HLS, YUV, YCrCb
 orient = 15  # HOG orientations
 pix_per_cell = 8  # HOG pixels per cell
@@ -115,7 +114,7 @@ def color_hist(img, nbins=32):  # bins_range=(0, 256)
     return hist_features
 
 
-def find_cars(img, ystart, ystop, scale, svc, X_scaler, orient, pix_per_cell, cell_per_block, spatial_size, hist_bins):
+def find_temoc(img, ystart, ystop, scale, svc, X_scaler, orient, pix_per_cell, cell_per_block, spatial_size, hist_bins):
     draw_img = np.copy(img)
     img = img.astype(np.float32) / 255
 
@@ -193,44 +192,44 @@ def apply_sliding_window(image, svc, X_scaler, pix_per_cell, cell_per_block, spa
     #     apply to different scales
     bboxes = []
     ystart = 0
-    ystop = 500
-    out_img, bboxes1 = find_cars(image, ystart, ystop, 1.0, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    ystop = 2000
+    out_img, bboxes1 = find_temoc(image, ystart, ystop, 1.0, svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                  spatial_size, hist_bins)
     ystart = 0
-    ystop = 500
-    out_img, bboxes2 = find_cars(out_img, ystart, ystop, 1.3, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    ystop = 2000
+    out_img, bboxes2 = find_temoc(out_img, ystart, ystop, 1.3, svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                  spatial_size, hist_bins)
     ystart = 0
-    ystop = 500
-    out_img, bboxes3 = find_cars(out_img, ystart, ystop, 1.4, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    ystop = 2000
+    out_img, bboxes3 = find_temoc(out_img, ystart, ystop, 1.4, svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                  spatial_size, hist_bins)
     ystart = 0
-    ystop = 556
-    out_img, bboxes4 = find_cars(out_img, ystart, ystop, 1.6, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    ystop = 2000
+    out_img, bboxes4 = find_temoc(out_img, ystart, ystop, 1.6, svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                  spatial_size, hist_bins)
     ystart = 0
-    ystop = 556
-    out_img, bboxes5 = find_cars(out_img, ystart, ystop, 1.8, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    ystop = 2000
+    out_img, bboxes5 = find_temoc(out_img, ystart, ystop, 1.8, svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                  spatial_size, hist_bins)
     ystart = 0
-    ystop = 556
-    out_img, bboxes6 = find_cars(out_img, ystart, ystop, 2.0, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    ystop = 2000
+    out_img, bboxes6 = find_temoc(out_img, ystart, ystop, 2.0, svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                  spatial_size, hist_bins)
     ystart = 0
-    ystop = 556
-    out_img, bboxes7 = find_cars(out_img, ystart, ystop, 1.9, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    ystop = 2000
+    out_img, bboxes7 = find_temoc(out_img, ystart, ystop, 1.9, svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                  spatial_size, hist_bins)
     ystart = 0
-    ystop = 556
-    out_img, bboxes8 = find_cars(out_img, ystart, ystop, 1.3, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    ystop = 2000
+    out_img, bboxes8 = find_temoc(out_img, ystart, ystop, 1.3, svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                  spatial_size, hist_bins)
     ystart = 0
-    ystop = 556
-    out_img, bboxes9 = find_cars(out_img, ystart, ystop, 2.2, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    ystop = 2000
+    out_img, bboxes9 = find_temoc(out_img, ystart, ystop, 2.2, svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                  spatial_size, hist_bins)
     ystart = 0
-    ystop = 656
-    out_img, bboxes10 = find_cars(out_img, ystart, ystop, 3.0, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    ystop = 2000
+    out_img, bboxes10 = find_temoc(out_img, ystart, ystop, 3.0, svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                   spatial_size, hist_bins)
     bboxes.extend(bboxes1)
     bboxes.extend(bboxes2)
@@ -257,7 +256,7 @@ def convert_color(img, conv='RGB2YCrCb'):
         return cv2.cvtColor(img, cv2.COLOR_RGB2YUV)
 
 
-def find_cars(img, ystart, ystop, scale, svc, X_scaler, orient, pix_per_cell, cell_per_block, spatial_size, hist_bins):
+def find_temoc(img, ystart, ystop, scale, svc, X_scaler, orient, pix_per_cell, cell_per_block, spatial_size, hist_bins):
     draw_img = np.copy(img)
     img = img.astype(np.float32) / 255
 
@@ -335,43 +334,43 @@ def apply_sliding_window(image, svc, X_scaler, pix_per_cell, cell_per_block, spa
     bboxes = []
     ystart = 0
     ystop = 2000
-    out_img, bboxes1 = find_cars(image, ystart, ystop, 2.0, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    out_img, bboxes1 = find_temoc(image, ystart, ystop, 2.0, svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                  spatial_size, hist_bins)
     ystart = 0
     ystop = 2000
-    out_img, bboxes2 = find_cars(out_img, ystart, ystop, 2.7, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    out_img, bboxes2 = find_temoc(out_img, ystart, ystop, 2.7, svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                  spatial_size, hist_bins)
     ystart = 0
     ystop = 2000
-    out_img, bboxes3 = find_cars(out_img, ystart, ystop, 2.8, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    out_img, bboxes3 = find_temoc(out_img, ystart, ystop, 2.8, svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                  spatial_size, hist_bins)
     ystart = 0
     ystop = 2000
-    out_img, bboxes4 = find_cars(out_img, ystart, ystop, 2.9, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    out_img, bboxes4 = find_temoc(out_img, ystart, ystop, 2.9, svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                  spatial_size, hist_bins)
     ystart = 0
     ystop = 2000
-    out_img, bboxes5 = find_cars(out_img, ystart, ystop, 2.1, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    out_img, bboxes5 = find_temoc(out_img, ystart, ystop, 2.1, svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                  spatial_size, hist_bins)
     ystart = 0
     ystop = 2000
-    out_img, bboxes6 = find_cars(out_img, ystart, ystop, 2.2, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    out_img, bboxes6 = find_temoc(out_img, ystart, ystop, 2.2, svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                  spatial_size, hist_bins)
     ystart = 0
     ystop = 2000
-    out_img, bboxes7 = find_cars(out_img, ystart, ystop, 2.3, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    out_img, bboxes7 = find_temoc(out_img, ystart, ystop, 2.3, svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                  spatial_size, hist_bins)
     ystart = 0
     ystop = 2000
-    out_img, bboxes8 = find_cars(out_img, ystart, ystop, 2.5, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    out_img, bboxes8 = find_temoc(out_img, ystart, ystop, 2.5, svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                  spatial_size, hist_bins)
     ystart = 0
     ystop = 2000
-    out_img, bboxes9 = find_cars(out_img, ystart, ystop, 2.6, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    out_img, bboxes9 = find_temoc(out_img, ystart, ystop, 2.6, svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                  spatial_size, hist_bins)
     ystart = 0
     ystop = 2000
-    out_img, bboxes10 = find_cars(out_img, ystart, ystop, 1.9, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    out_img, bboxes10 = find_temoc(out_img, ystart, ystop, 1.9, svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                   spatial_size, hist_bins)
 
     bboxes.extend(bboxes1)
@@ -388,16 +387,16 @@ def apply_sliding_window(image, svc, X_scaler, pix_per_cell, cell_per_block, spa
     return out_img, bboxes
 
 
-def show_images(image1, image2, image3, image1_exp="Image 1", image2_exp="Image 2", image3_exp="Image 3"):
-    f, (ax1, ax2, ax3) = plt.subplots(1, 3)
-    f.tight_layout()
-    ax1.imshow(image1)
-    ax1.set_title(image1_exp, fontsize=20)
-    ax2.imshow(image2)
-    ax2.set_title(image2_exp, fontsize=20)
-    ax3.imshow(image3)
-    ax3.set_title(image3_exp, fontsize=20)
-    plt.subplots_adjust(left=0., right=1, top=0.9, bottom=0.)
+# def show_images(image1, image2, image3, image1_exp="Image 1", image2_exp="Image 2", image3_exp="Image 3"):
+#     f, (ax1, ax2, ax3) = plt.subplots(1, 3)
+#     f.tight_layout()
+#     ax1.imshow(image1)
+#     ax1.set_title(image1_exp, fontsize=20)
+#     ax2.imshow(image2)
+#     ax2.set_title(image2_exp, fontsize=20)
+#     ax3.imshow(image3)
+#     ax3.set_title(image3_exp, fontsize=20)
+#     plt.subplots_adjust(left=0., right=1, top=0.9, bottom=0.)
 
 
 def add_heat(heatmap, bbox_list):
@@ -435,15 +434,16 @@ def draw_labeled_bboxes(img, labels):
 
 
 if __name__ == '__main__':
-    # Exploring the data
+    camera = cv2.VideoCapture(0)
 
+    # ------------Explore data---------------- #
     ist = glob.glob('positive_images/*.jpg')
     nott = glob.glob('resizetrain/not/*.jpg')
     print("Size of is-t dataset : ", len(ist))
     print("Size of non-t dataset : ", len(nott))
 
     # ------------extract features and train SVM---------------- #
-    # 改： remove color space parameter
+
     car_features = extract_features(ist, color_space=color_space,
                                     spatial_size=spatial_size, hist_bins=hist_bins,
                                     orient=orient, pix_per_cell=pix_per_cell,
@@ -462,15 +462,8 @@ if __name__ == '__main__':
     scaled_X = X_scaler.transform(X)
     # Define the labels vector
     y = np.hstack((np.ones(len(car_features)), np.zeros(len(notcar_features))))
-
     # Split up data into randomized training and test sets
     rand_state = np.random.randint(0, 100)
-    # X_train, X_test, y_train, y_test = train_test_split(
-    #     scaled_X, y, test_size=0.2, random_state=rand_state)
-
-    print('Using:', orient, 'orientations', pix_per_cell,
-          'pixels per cell and', cell_per_block, 'cells per block')
-    print('Feature vector length:', len(X[0]))
     # Use a linear SVC
     svc = LinearSVC()
     # Check the training time for the SVC
@@ -478,61 +471,36 @@ if __name__ == '__main__':
     svc.fit(X, y)
     t2 = time.time()
     print(round(t2 - t, 2), 'Seconds to train SVC')
-    # Check the score of the SVC
-    # print('Test Accuracy of SVC = ', round(svc.score(X_test, y_test), 4))
-    # -------------apply slide windows to detect TEMOC--------------- #
-    #
-    # image1 = mpimg.imread('resize_test/3.jpg')
-    # output_image1, bboxes1 = apply_sliding_window(image1, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size, hist_bins)
-    # cv2.imwrite("output/1.jpg",output_image1)
-    image1 = mpimg.imread('test/1.png')
-    image2 = mpimg.imread('test/2.png')
-    image3 = mpimg.imread('test/3.png')
-    image4 = mpimg.imread('test/4.png')
-    image5 = mpimg.imread('test/5.png')
-    image6 = mpimg.imread('test/6.png')
-    # image7 = mpimg.imread('test/7.png')
-    # image8 = mpimg.imread('test/8.png')
-    # image9 = mpimg.imread('test/9.png')
 
+    while True:
+        (ret, frame) = camera.read()
+        if not ret:
+            break
+        # ------------Find Temoc using sliding window---------------- #
+        image = frame
+        # image = mpimg.imread('test/11.png')
+        draw_image = np.copy(image)
+        output_image, bboxes = apply_sliding_window(image, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size,
+                                                    hist_bins)
 
-    output_image1, bboxes1 = apply_sliding_window(image1, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size,
-                                                  hist_bins)
-    output_image2, bboxes2 = apply_sliding_window(image2, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size,
-                                                  hist_bins)
-    output_image3, bboxes3 = apply_sliding_window(image3, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size,
-                                                  hist_bins)
-    output_image4, bboxes4 = apply_sliding_window(image4, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size, hist_bins)
-    output_image5, bboxes5 = apply_sliding_window(image5, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size, hist_bins)
-    output_image6, bboxes6 = apply_sliding_window(image6, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size, hist_bins)
+        heat = np.zeros_like(output_image[:, :, 0]).astype(np.float)
+        # Add heat to each box in box list
+        heat = add_heat(heat, bboxes)
 
-    image = mpimg.imread('test/12.png')
-    draw_image = np.copy(image)
-    output_image, bboxes = apply_sliding_window(image, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size,
-                                                hist_bins)
+        # Apply threshold to help remove false positives
+        threshold = 1
+        heat = apply_threshold(heat, threshold)
 
-    # image = mpimg.imread('test/10.png')
-    # draw_image = np.copy(image)
-    # output_image, bboxes = apply_sliding_window(image, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size, hist_bins)
-    show_images(output_image1, output_image2, output_image3)
-    # cv2.imshow("6",cv2.cvtColor(output_image6,cv2.COLOR_BGR2RGB))
-    # cv2.waitKey(0)
+        # Visualize the heatmap when displaying
+        heatmap = np.clip(heat, 0, 255)
 
-    # show_images(output_image4, output_image5, output_image6)
-
-    heat = np.zeros_like(output_image[:, :, 0]).astype(np.float)
-    # Add heat to each box in box list
-    heat = add_heat(heat, bboxes)
-
-    # Apply threshold to help remove false positives
-    threshold = 1
-    heat = apply_threshold(heat, threshold)
-
-    # Visualize the heatmap when displaying
-    heatmap = np.clip(heat, 0, 255)
-
-    # Find final boxes from heatmap using label function
-    labels = label(heatmap)
-    draw_img = draw_labeled_bboxes(np.copy(image), labels)
-    cv2.imshow("draw_img", cv2.cvtColor(draw_img, cv2.COLOR_BGR2RGB))
-    cv2.waitKey(0)
+        # Find final boxes from heatmap using label function
+        labels = label(heatmap)
+        draw_img = draw_labeled_bboxes(np.copy(image), labels)
+        # Output test image result
+        cv2.imshow("draw_img", cv2.cvtColor(draw_img, cv2.COLOR_BGR2RGB))
+        k = cv2.waitKey(5) & 0xFF
+        if k == 5:
+            break
+    camera.release()
+    cv2.destroyAllWindows()
