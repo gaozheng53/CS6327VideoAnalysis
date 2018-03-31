@@ -10,6 +10,8 @@ import glob
 import time
 import cv2
 from scipy.ndimage.measurements import label
+from collections import deque
+
 
 
 color_space = 'RGB'  # Can be RGB, HSV, LUV, HLS, YUV, YCrCb
@@ -22,6 +24,8 @@ hist_bins = 32  # Number of histogram bins
 spatial_feat = True  # Spatial features on or off
 hist_feat = True  # Histogram features on or off
 hog_feat = True  # HOG features on or off
+# scale_seq = [1.0, 1.3, 1.4, 1.6, 1.8, 2.0, 1.9, 1.5, 2.2, 3.0]
+scale_seq = [1.6, 2.4, 2.5, 2.6, 1.8, 2.0, 1.9, 1.5, 2.2, 2.3]
 
 
 # a function to extract features from a list of images
@@ -135,7 +139,7 @@ def find_temoc(img, ystart, ystop, scale, svc, X_scaler, orient, pix_per_cell, c
     nfeat_per_block = orient * cell_per_block ** 2
 
     # 64 was the orginal sampling rate, with 8 cells and 8 pix per cell
-    window = 256
+    window = 64   ##############
     nblocks_per_window = (window // pix_per_cell) - cell_per_block + 1
     # nblocks_per_window = (window // pix_per_cell)-1
 
@@ -192,45 +196,36 @@ def apply_sliding_window(image, svc, X_scaler, pix_per_cell, cell_per_block, spa
     #     apply to different scales
     bboxes = []
     ystart = 0
-    ystop = 2000
-    out_img, bboxes1 = find_temoc(image, ystart, ystop, 1.0, svc, X_scaler, orient, pix_per_cell, cell_per_block,
-                                 spatial_size, hist_bins)
-    ystart = 0
-    ystop = 2000
-    out_img, bboxes2 = find_temoc(out_img, ystart, ystop, 1.3, svc, X_scaler, orient, pix_per_cell, cell_per_block,
-                                 spatial_size, hist_bins)
-    ystart = 0
-    ystop = 2000
-    out_img, bboxes3 = find_temoc(out_img, ystart, ystop, 1.4, svc, X_scaler, orient, pix_per_cell, cell_per_block,
-                                 spatial_size, hist_bins)
-    ystart = 0
-    ystop = 2000
-    out_img, bboxes4 = find_temoc(out_img, ystart, ystop, 1.6, svc, X_scaler, orient, pix_per_cell, cell_per_block,
-                                 spatial_size, hist_bins)
-    ystart = 0
-    ystop = 2000
-    out_img, bboxes5 = find_temoc(out_img, ystart, ystop, 1.8, svc, X_scaler, orient, pix_per_cell, cell_per_block,
-                                 spatial_size, hist_bins)
-    ystart = 0
-    ystop = 2000
-    out_img, bboxes6 = find_temoc(out_img, ystart, ystop, 2.0, svc, X_scaler, orient, pix_per_cell, cell_per_block,
-                                 spatial_size, hist_bins)
-    ystart = 0
-    ystop = 2000
-    out_img, bboxes7 = find_temoc(out_img, ystart, ystop, 1.9, svc, X_scaler, orient, pix_per_cell, cell_per_block,
-                                 spatial_size, hist_bins)
-    ystart = 0
-    ystop = 2000
-    out_img, bboxes8 = find_temoc(out_img, ystart, ystop, 1.3, svc, X_scaler, orient, pix_per_cell, cell_per_block,
-                                 spatial_size, hist_bins)
-    ystart = 0
-    ystop = 2000
-    out_img, bboxes9 = find_temoc(out_img, ystart, ystop, 2.2, svc, X_scaler, orient, pix_per_cell, cell_per_block,
-                                 spatial_size, hist_bins)
-    ystart = 0
-    ystop = 2000
-    out_img, bboxes10 = find_temoc(out_img, ystart, ystop, 3.0, svc, X_scaler, orient, pix_per_cell, cell_per_block,
+    ystop = 720
+    out_img, bboxes1 = find_temoc(image, ystart, ystop, scale_seq[0], svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                   spatial_size, hist_bins)
+
+    out_img, bboxes2 = find_temoc(out_img, ystart, ystop, scale_seq[1], svc, X_scaler, orient, pix_per_cell, cell_per_block,
+                                  spatial_size, hist_bins)
+
+    out_img, bboxes3 = find_temoc(out_img, ystart, ystop, scale_seq[2], svc, X_scaler, orient, pix_per_cell, cell_per_block,
+                                  spatial_size, hist_bins)
+
+    out_img, bboxes4 = find_temoc(out_img, ystart, ystop, scale_seq[3], svc, X_scaler, orient, pix_per_cell, cell_per_block,
+                                  spatial_size, hist_bins)
+
+    out_img, bboxes5 = find_temoc(out_img, ystart, ystop, scale_seq[4], svc, X_scaler, orient, pix_per_cell, cell_per_block,
+                                  spatial_size, hist_bins)
+
+    out_img, bboxes6 = find_temoc(out_img, ystart, ystop, scale_seq[5], svc, X_scaler, orient, pix_per_cell, cell_per_block,
+                                  spatial_size, hist_bins)
+
+    out_img, bboxes7 = find_temoc(out_img, ystart, ystop, scale_seq[6], svc, X_scaler, orient, pix_per_cell, cell_per_block,
+                                  spatial_size, hist_bins)
+
+    out_img, bboxes8 = find_temoc(out_img, ystart, ystop, scale_seq[7], svc, X_scaler, orient, pix_per_cell, cell_per_block,
+                                  spatial_size, hist_bins)
+
+    out_img, bboxes9 = find_temoc(out_img, ystart, ystop, scale_seq[8], svc, X_scaler, orient, pix_per_cell, cell_per_block,
+                                  spatial_size, hist_bins)
+
+    out_img, bboxes10 = find_temoc(out_img, ystart, ystop, scale_seq[9], svc, X_scaler, orient, pix_per_cell, cell_per_block,
+                                   spatial_size, hist_bins)
     bboxes.extend(bboxes1)
     bboxes.extend(bboxes2)
     bboxes.extend(bboxes3)
@@ -254,149 +249,6 @@ def convert_color(img, conv='RGB2YCrCb'):
         return cv2.cvtColor(img, cv2.COLOR_RGB2LUV)
     if conv == 'RGB2YUV':
         return cv2.cvtColor(img, cv2.COLOR_RGB2YUV)
-
-
-def find_temoc(img, ystart, ystop, scale, svc, X_scaler, orient, pix_per_cell, cell_per_block, spatial_size, hist_bins):
-    draw_img = np.copy(img)
-    img = img.astype(np.float32) / 255
-
-    img_tosearch = img[ystart:ystop, :, :]  # sub-sampling
-    ctrans_tosearch = convert_color(img_tosearch, conv='RGB2YUV')
-    if scale != 1:
-        imshape = ctrans_tosearch.shape
-        ctrans_tosearch = cv2.resize(ctrans_tosearch, (np.int(imshape[1] / scale), np.int(imshape[0] / scale)))
-
-    ch1 = ctrans_tosearch[:, :, 0]
-    ch2 = ctrans_tosearch[:, :, 1]
-    ch3 = ctrans_tosearch[:, :, 2]
-
-    # Define blocks and steps as above
-    nxblocks = (ch1.shape[1] // pix_per_cell) - cell_per_block + 1
-    nyblocks = (ch1.shape[0] // pix_per_cell) - cell_per_block + 1
-    nfeat_per_block = orient * cell_per_block ** 2
-
-    # 64 was the orginal sampling rate, with 8 cells and 8 pix per cell
-    window = 64
-    nblocks_per_window = (window // pix_per_cell) - cell_per_block + 1
-    # nblocks_per_window = (window // pix_per_cell)-1
-
-    cells_per_step = 2  # Instead of overlap, define how many cells to step
-    nxsteps = (nxblocks - nblocks_per_window) // cells_per_step
-    nysteps = (nyblocks - nblocks_per_window) // cells_per_step
-
-    # Compute individual channel HOG features for the entire image
-    hog1 = get_hog_features(ch1, orient, pix_per_cell, cell_per_block, vis=False, feature_vec=False)
-    hog2 = get_hog_features(ch2, orient, pix_per_cell, cell_per_block, vis=False, feature_vec=False)
-    hog3 = get_hog_features(ch3, orient, pix_per_cell, cell_per_block, vis=False, feature_vec=False)
-
-    bboxes = []
-    for xb in range(nxsteps):
-        for yb in range(nysteps):
-            ypos = yb * cells_per_step
-            xpos = xb * cells_per_step
-            # Extract HOG for this patch
-            hog_feat1 = hog1[ypos:ypos + nblocks_per_window, xpos:xpos + nblocks_per_window].ravel()
-            hog_feat2 = hog2[ypos:ypos + nblocks_per_window, xpos:xpos + nblocks_per_window].ravel()
-            hog_feat3 = hog3[ypos:ypos + nblocks_per_window, xpos:xpos + nblocks_per_window].ravel()
-            hog_features = np.hstack((hog_feat1, hog_feat2, hog_feat3))
-
-            xleft = xpos * pix_per_cell
-            ytop = ypos * pix_per_cell
-
-            # Extract the image patch
-            subimg = cv2.resize(ctrans_tosearch[ytop:ytop + window, xleft:xleft + window], (64, 64))
-
-            # Get color features
-            spatial_features = bin_spatial(subimg, size=spatial_size)
-            hist_features = color_hist(subimg, nbins=hist_bins)
-
-            # Scale features and make a prediction
-            test_stacked = np.hstack((spatial_features, hist_features, hog_features)).reshape(1, -1)
-            test_features = X_scaler.transform(test_stacked)
-            # test_features = scaler.transform(np.array(features).reshape(1, -1))
-            # test_features = X_scaler.transform(np.hstack((shape_feat, hist_feat)).reshape(1, -1))
-            test_prediction = svc.predict(test_features)
-
-            if test_prediction == 1:
-                xbox_left = np.int(xleft * scale)
-                ytop_draw = np.int(ytop * scale)
-                win_draw = np.int(window * scale)
-                cv2.rectangle(draw_img, (xbox_left, ytop_draw + ystart),
-                              (xbox_left + win_draw, ytop_draw + win_draw + ystart), (0, 0, 255), 6)
-                bboxes.append(((int(xbox_left), int(ytop_draw + ystart)),
-                               (int(xbox_left + win_draw), int(ytop_draw + win_draw + ystart))))
-
-    return draw_img, bboxes
-
-
-def apply_sliding_window(image, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size, hist_bins):
-    #     apply to different scales
-    bboxes = []
-    ystart = 0
-    ystop = 2000
-    out_img, bboxes1 = find_temoc(image, ystart, ystop, 2.0, svc, X_scaler, orient, pix_per_cell, cell_per_block,
-                                 spatial_size, hist_bins)
-    ystart = 0
-    ystop = 2000
-    out_img, bboxes2 = find_temoc(out_img, ystart, ystop, 2.7, svc, X_scaler, orient, pix_per_cell, cell_per_block,
-                                 spatial_size, hist_bins)
-    ystart = 0
-    ystop = 2000
-    out_img, bboxes3 = find_temoc(out_img, ystart, ystop, 2.8, svc, X_scaler, orient, pix_per_cell, cell_per_block,
-                                 spatial_size, hist_bins)
-    ystart = 0
-    ystop = 2000
-    out_img, bboxes4 = find_temoc(out_img, ystart, ystop, 2.9, svc, X_scaler, orient, pix_per_cell, cell_per_block,
-                                 spatial_size, hist_bins)
-    ystart = 0
-    ystop = 2000
-    out_img, bboxes5 = find_temoc(out_img, ystart, ystop, 2.1, svc, X_scaler, orient, pix_per_cell, cell_per_block,
-                                 spatial_size, hist_bins)
-    ystart = 0
-    ystop = 2000
-    out_img, bboxes6 = find_temoc(out_img, ystart, ystop, 2.2, svc, X_scaler, orient, pix_per_cell, cell_per_block,
-                                 spatial_size, hist_bins)
-    ystart = 0
-    ystop = 2000
-    out_img, bboxes7 = find_temoc(out_img, ystart, ystop, 2.3, svc, X_scaler, orient, pix_per_cell, cell_per_block,
-                                 spatial_size, hist_bins)
-    ystart = 0
-    ystop = 2000
-    out_img, bboxes8 = find_temoc(out_img, ystart, ystop, 2.5, svc, X_scaler, orient, pix_per_cell, cell_per_block,
-                                 spatial_size, hist_bins)
-    ystart = 0
-    ystop = 2000
-    out_img, bboxes9 = find_temoc(out_img, ystart, ystop, 2.6, svc, X_scaler, orient, pix_per_cell, cell_per_block,
-                                 spatial_size, hist_bins)
-    ystart = 0
-    ystop = 2000
-    out_img, bboxes10 = find_temoc(out_img, ystart, ystop, 1.9, svc, X_scaler, orient, pix_per_cell, cell_per_block,
-                                  spatial_size, hist_bins)
-
-    bboxes.extend(bboxes1)
-    bboxes.extend(bboxes2)
-    bboxes.extend(bboxes3)
-    bboxes.extend(bboxes4)
-    bboxes.extend(bboxes5)
-    bboxes.extend(bboxes6)
-    bboxes.extend(bboxes7)
-    bboxes.extend(bboxes8)
-    bboxes.extend(bboxes9)
-    bboxes.extend(bboxes10)
-
-    return out_img, bboxes
-
-
-# def show_images(image1, image2, image3, image1_exp="Image 1", image2_exp="Image 2", image3_exp="Image 3"):
-#     f, (ax1, ax2, ax3) = plt.subplots(1, 3)
-#     f.tight_layout()
-#     ax1.imshow(image1)
-#     ax1.set_title(image1_exp, fontsize=20)
-#     ax2.imshow(image2)
-#     ax2.set_title(image2_exp, fontsize=20)
-#     ax3.imshow(image3)
-#     ax3.set_title(image3_exp, fontsize=20)
-#     plt.subplots_adjust(left=0., right=1, top=0.9, bottom=0.)
 
 
 def add_heat(heatmap, bbox_list):
@@ -434,11 +286,9 @@ def draw_labeled_bboxes(img, labels):
 
 
 if __name__ == '__main__':
-    camera = cv2.VideoCapture(0)
-
     # ------------Explore data---------------- #
-    ist = glob.glob('positive_images/*.jpg')
-    nott = glob.glob('resizetrain/not/*.jpg')
+    ist = glob.glob('train_images/is/*.jpg')
+    nott = glob.glob('train_images/not/*.jpg')
     print("Size of is-t dataset : ", len(ist))
     print("Size of non-t dataset : ", len(nott))
 
@@ -472,35 +322,60 @@ if __name__ == '__main__':
     t2 = time.time()
     print(round(t2 - t, 2), 'Seconds to train SVC')
 
-    while True:
-        (ret, frame) = camera.read()
-        if not ret:
-            break
-        # ------------Find Temoc using sliding window---------------- #
-        image = frame
-        # image = mpimg.imread('test/11.png')
-        draw_image = np.copy(image)
-        output_image, bboxes = apply_sliding_window(image, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size,
-                                                    hist_bins)
+    # ------------test in an image------------------- #
+    # ------------Find Temoc using sliding window---------------- #
+    image = mpimg.imread('test/11.png')
+    draw_image = np.copy(image)
+    output_image, bboxes = apply_sliding_window(image, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size,
+                                                hist_bins)
 
-        heat = np.zeros_like(output_image[:, :, 0]).astype(np.float)
-        # Add heat to each box in box list
-        heat = add_heat(heat, bboxes)
+    heat = np.zeros_like(output_image[:, :, 0]).astype(np.float)
+    # Add heat to each box in box list
+    heat = add_heat(heat, bboxes)
 
-        # Apply threshold to help remove false positives
-        threshold = 1
-        heat = apply_threshold(heat, threshold)
+    # Apply threshold to help remove false positives
+    threshold = 5
+    heat = apply_threshold(heat, threshold)
 
-        # Visualize the heatmap when displaying
-        heatmap = np.clip(heat, 0, 255)
+    # Visualize the heatmap when displaying
+    heatmap = np.clip(heat, 0, 255)
 
-        # Find final boxes from heatmap using label function
-        labels = label(heatmap)
-        draw_img = draw_labeled_bboxes(np.copy(image), labels)
-        # Output test image result
-        cv2.imshow("draw_img", cv2.cvtColor(draw_img, cv2.COLOR_BGR2RGB))
-        k = cv2.waitKey(5) & 0xFF
-        if k == 5:
-            break
-    camera.release()
-    cv2.destroyAllWindows()
+    # Find final boxes from heatmap using label function
+    labels = label(heatmap)
+    draw_img = draw_labeled_bboxes(np.copy(image), labels)
+    # Output test image result
+    cv2.imshow("draw_img", cv2.cvtColor(draw_img, cv2.COLOR_BGR2RGB))
+    cv2.waitKey(0)
+
+    # ------------------test in camera--------------------- #
+    # camera = cv2.VideoCapture("Temoc-cut.mp4")
+    # while True:
+    #     (ret, frame) = camera.read()
+    #     if not ret:
+    #         break
+    #     # ------------Find Temoc using sliding window---------------- #
+    #     draw_image = np.copy(frame)
+    #     output_image, bboxes = apply_sliding_window(frame, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size,
+    #                                                 hist_bins)
+    #
+    #     heat = np.zeros_like(output_image[:, :, 0]).astype(np.float)
+    #     # Add heat to each box in box list
+    #     heat = add_heat(heat, bboxes)
+    #
+    #     # Apply threshold to help remove false positives
+    #     threshold = 1.5
+    #     heat = apply_threshold(heat, threshold)
+    #
+    #     # Visualize the heatmap when displaying
+    #     heatmap = np.clip(heat, 0, 255)
+    #
+    #     # Find final boxes from heatmap using label function
+    #     labels = label(heatmap)
+    #     draw_img = draw_labeled_bboxes(np.copy(frame), labels)
+    #     # Output test image result
+    #     cv2.imshow("draw_img", draw_img)
+    #     k = cv2.waitKey(1) & 0xFF
+    #     if k == 1:
+    #         break
+    # camera.release()
+    # cv2.destroyAllWindows()
