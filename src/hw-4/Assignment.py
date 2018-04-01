@@ -24,7 +24,7 @@ hist_feat = True  # Histogram features on or off
 hog_feat = True  # HOG features on or off
 # scale_seq = [1.0, 1.3, 1.4, 1.6, 1.8, 2.0, 1.9, 1.5, 2.2, 3.0]
 scale_seq = [1.6, 2.4, 2.5, 2.6, 1.8, 2.0, 1.9, 1.5, 2.2, 2.3]
-scale_seq_single = [2.0]
+scale_seq_single = [2]
 
 
 # a function to extract features from a list of images
@@ -253,7 +253,7 @@ def apply_sliding_window_simple(image, svc, X_scaler, pix_per_cell, cell_per_blo
     #     apply to different scales
     bboxes = []
     ystart = 300
-    ystop = 650
+    ystop = 700
     out_img, bboxes1 = find_temoc(image, ystart, ystop, scale_seq_single[0], svc, X_scaler, orient, pix_per_cell,
                                   cell_per_block,
                                   spatial_size, hist_bins)
@@ -316,24 +316,24 @@ if __name__ == '__main__':
 
     # ------------extract features and train SVM---------------- #
 
-    car_features = extract_features(ist, color_space=color_space,
+    t_features = extract_features(ist, color_space=color_space,
                                     spatial_size=spatial_size, hist_bins=hist_bins,
                                     orient=orient, pix_per_cell=pix_per_cell,
                                     cell_per_block=cell_per_block,
                                     hog_channel=hog_channel, spatial_feat=spatial_feat,
                                     hist_feat=hist_feat, hog_feat=hog_feat)
-    notcar_features = extract_features(nott, color_space=color_space,
+    nott_features = extract_features(nott, color_space=color_space,
                                        spatial_size=spatial_size, hist_bins=hist_bins,
                                        orient=orient, pix_per_cell=pix_per_cell,
                                        cell_per_block=cell_per_block,
                                        hog_channel=hog_channel, spatial_feat=spatial_feat,
                                        hist_feat=hist_feat, hog_feat=hog_feat)
 
-    X = np.vstack((car_features, notcar_features)).astype(np.float64)
+    X = np.vstack((t_features, nott_features)).astype(np.float64)
     X_scaler = StandardScaler().fit(X)
     scaled_X = X_scaler.transform(X)
     # Define the labels vector
-    y = np.hstack((np.ones(len(car_features)), np.zeros(len(notcar_features))))
+    y = np.hstack((np.ones(len(t_features)), np.zeros(len(nott_features))))
     # Split up data into randomized training and test sets
     rand_state = np.random.randint(0, 100)
     # Use a linear SVC
@@ -402,3 +402,7 @@ if __name__ == '__main__':
             break
     camera.release()
     cv2.destroyAllWindows()
+
+
+# real-time good parameter: threshold = 1.5, scale_seq_single = [1.8], ystart = 300, ystop = 700
+# 2. (better)  scale_seq_single = [1.8]. threshold = 2 , ystart = 300, ystop = 650

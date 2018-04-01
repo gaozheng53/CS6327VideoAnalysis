@@ -26,7 +26,7 @@ hist_feat = True  # Histogram features on or off
 hog_feat = True  # HOG features on or off
 # scale_seq = [1.0, 1.3, 1.4, 1.6, 1.8, 2.0, 1.9, 1.5, 2.2, 3.0]
 scale_seq = [1.6, 2.4, 2.5, 2.6, 1.8, 2.0, 1.9, 1.5, 2.2, 2.3]
-
+scale_seq_single = [2.0]
 
 # a function to extract features from a list of images
 def extract_features(imgs, color_space='RGB', spatial_size=(32, 32),
@@ -195,8 +195,8 @@ def find_temoc(img, ystart, ystop, scale, svc, X_scaler, orient, pix_per_cell, c
 def apply_sliding_window(image, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size, hist_bins):
     #     apply to different scales
     bboxes = []
-    ystart = 0
-    ystop = 720
+    ystart = 300
+    ystop = 650
     out_img, bboxes1 = find_temoc(image, ystart, ystop, scale_seq[0], svc, X_scaler, orient, pix_per_cell, cell_per_block,
                                   spatial_size, hist_bins)
 
@@ -236,6 +236,17 @@ def apply_sliding_window(image, svc, X_scaler, pix_per_cell, cell_per_block, spa
     bboxes.extend(bboxes8)
     bboxes.extend(bboxes9)
     bboxes.extend(bboxes10)
+
+    return out_img, bboxes
+
+def apply_sliding_window_simple(image, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size, hist_bins):
+    #     apply to different scales
+    bboxes = []
+    ystart = 300
+    ystop = 650
+    out_img, bboxes1 = find_temoc(image, ystart, ystop, scale_seq_single[0], svc, X_scaler, orient, pix_per_cell, cell_per_block,
+                                  spatial_size, hist_bins)
+    bboxes.extend(bboxes1)
 
     return out_img, bboxes
 
@@ -289,8 +300,8 @@ if __name__ == '__main__':
     # ------------Explore data---------------- #
     ist = glob.glob('train_images/is/*.jpg')
     nott = glob.glob('train_images/not/*.jpg')
-    print("Size of is-t dataset : ", len(ist))
-    print("Size of non-t dataset : ", len(nott))
+    # print("Size of is-t dataset : ", len(ist))
+    # print("Size of non-t dataset : ", len(nott))
 
     # ------------extract features and train SVM---------------- #
 
@@ -324,58 +335,58 @@ if __name__ == '__main__':
 
     # ------------test in an image------------------- #
     # ------------Find Temoc using sliding window---------------- #
-    image = mpimg.imread('test/11.png')
-    draw_image = np.copy(image)
-    output_image, bboxes = apply_sliding_window(image, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size,
-                                                hist_bins)
-
-    heat = np.zeros_like(output_image[:, :, 0]).astype(np.float)
-    # Add heat to each box in box list
-    heat = add_heat(heat, bboxes)
-
-    # Apply threshold to help remove false positives
-    threshold = 5
-    heat = apply_threshold(heat, threshold)
-
-    # Visualize the heatmap when displaying
-    heatmap = np.clip(heat, 0, 255)
-
-    # Find final boxes from heatmap using label function
-    labels = label(heatmap)
-    draw_img = draw_labeled_bboxes(np.copy(image), labels)
-    # Output test image result
-    cv2.imshow("draw_img", cv2.cvtColor(draw_img, cv2.COLOR_BGR2RGB))
-    cv2.waitKey(0)
+    # image = mpimg.imread('test/11.png')
+    # draw_image = np.copy(image)
+    # output_image, bboxes = apply_sliding_window(image, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size,
+    #                                             hist_bins)
+    #
+    # heat = np.zeros_like(output_image[:, :, 0]).astype(np.float)
+    # # Add heat to each box in box list
+    # heat = add_heat(heat, bboxes)
+    #
+    # # Apply threshold to help remove false positives
+    # threshold = 5
+    # heat = apply_threshold(heat, threshold)
+    #
+    # # Visualize the heatmap when displaying
+    # heatmap = np.clip(heat, 0, 255)
+    #
+    # # Find final boxes from heatmap using label function
+    # labels = label(heatmap)
+    # draw_img = draw_labeled_bboxes(np.copy(image), labels)
+    # # Output test image result
+    # cv2.imshow("draw_img", cv2.cvtColor(draw_img, cv2.COLOR_BGR2RGB))
+    # cv2.waitKey(0)
 
     # ------------------test in camera--------------------- #
-    # camera = cv2.VideoCapture("Temoc-cut.mp4")
-    # while True:
-    #     (ret, frame) = camera.read()
-    #     if not ret:
-    #         break
-    #     # ------------Find Temoc using sliding window---------------- #
-    #     draw_image = np.copy(frame)
-    #     output_image, bboxes = apply_sliding_window(frame, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size,
-    #                                                 hist_bins)
-    #
-    #     heat = np.zeros_like(output_image[:, :, 0]).astype(np.float)
-    #     # Add heat to each box in box list
-    #     heat = add_heat(heat, bboxes)
-    #
-    #     # Apply threshold to help remove false positives
-    #     threshold = 1.5
-    #     heat = apply_threshold(heat, threshold)
-    #
-    #     # Visualize the heatmap when displaying
-    #     heatmap = np.clip(heat, 0, 255)
-    #
-    #     # Find final boxes from heatmap using label function
-    #     labels = label(heatmap)
-    #     draw_img = draw_labeled_bboxes(np.copy(frame), labels)
-    #     # Output test image result
-    #     cv2.imshow("draw_img", draw_img)
-    #     k = cv2.waitKey(1) & 0xFF
-    #     if k == 1:
-    #         break
-    # camera.release()
-    # cv2.destroyAllWindows()
+    camera = cv2.VideoCapture(0)
+    while True:
+        (ret, frame) = camera.read()
+        if not ret:
+            break
+        # ------------Find Temoc using sliding window---------------- #
+        draw_image = np.copy(frame)
+        output_image, bboxes = apply_sliding_window_simple(frame, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size,
+                                                    hist_bins)
+
+        heat = np.zeros_like(output_image[:, :, 0]).astype(np.float)
+        # Add heat to each box in box list
+        heat = add_heat(heat, bboxes)
+
+        # Apply threshold to help remove false positives
+        threshold = 2
+        heat = apply_threshold(heat, threshold)
+
+        # Visualize the heatmap when displaying
+        heatmap = np.clip(heat, 0, 255)
+
+        # Find final boxes from heatmap using label function
+        labels = label(heatmap)
+        draw_img = draw_labeled_bboxes(np.copy(frame), labels)
+        # Output test image result
+        cv2.imshow("draw_img", draw_img)
+        k = cv2.waitKey(1) & 0xFF
+        if k == 1:
+            break
+    camera.release()
+    cv2.destroyAllWindows()
