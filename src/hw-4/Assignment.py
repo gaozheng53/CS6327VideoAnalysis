@@ -23,7 +23,7 @@ spatial_feat = True  # Spatial features on or off
 hist_feat = True  # Histogram features on or off
 hog_feat = True  # HOG features on or off
 # scale_seq = [1.0, 1.3, 1.4, 1.6, 1.8, 2.0, 1.9, 1.5, 2.2, 3.0]
-scale_seq = [1.6, 2.4, 2.5, 2.6, 1.8, 2.0, 1.9, 1.5, 2.2, 2.3]
+# scale_seq = [1.6, 2.4, 2.5, 2.6, 1.8, 2.0, 1.9, 1.5, 2.2, 2.3]
 scale_seq_single = [2]
 
 
@@ -135,7 +135,7 @@ def find_temoc(img, ystart, ystop, scale, svc, X_scaler, orient, pix_per_cell, c
     # Define blocks and steps as above
     nxblocks = (ch1.shape[1] // pix_per_cell) - cell_per_block + 1
     nyblocks = (ch1.shape[0] // pix_per_cell) - cell_per_block + 1
-    nfeat_per_block = orient * cell_per_block ** 2
+    # nfeat_per_block = orient * cell_per_block ** 2
 
     # 64 was the orginal sampling rate, with 8 cells and 8 pix per cell
     window = 64  ##############
@@ -191,62 +191,62 @@ def find_temoc(img, ystart, ystop, scale, svc, X_scaler, orient, pix_per_cell, c
     return draw_img, bboxes
 
 
-def apply_sliding_window(image, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size, hist_bins):
-    #     apply to different scales
-    bboxes = []
-    ystart = 300
-    ystop = 650
-    out_img, bboxes1 = find_temoc(image, ystart, ystop, scale_seq[0], svc, X_scaler, orient, pix_per_cell,
-                                  cell_per_block,
-                                  spatial_size, hist_bins)
-
-    out_img, bboxes2 = find_temoc(out_img, ystart, ystop, scale_seq[1], svc, X_scaler, orient, pix_per_cell,
-                                  cell_per_block,
-                                  spatial_size, hist_bins)
-
-    out_img, bboxes3 = find_temoc(out_img, ystart, ystop, scale_seq[2], svc, X_scaler, orient, pix_per_cell,
-                                  cell_per_block,
-                                  spatial_size, hist_bins)
-
-    out_img, bboxes4 = find_temoc(out_img, ystart, ystop, scale_seq[3], svc, X_scaler, orient, pix_per_cell,
-                                  cell_per_block,
-                                  spatial_size, hist_bins)
-
-    out_img, bboxes5 = find_temoc(out_img, ystart, ystop, scale_seq[4], svc, X_scaler, orient, pix_per_cell,
-                                  cell_per_block,
-                                  spatial_size, hist_bins)
-
-    out_img, bboxes6 = find_temoc(out_img, ystart, ystop, scale_seq[5], svc, X_scaler, orient, pix_per_cell,
-                                  cell_per_block,
-                                  spatial_size, hist_bins)
-
-    out_img, bboxes7 = find_temoc(out_img, ystart, ystop, scale_seq[6], svc, X_scaler, orient, pix_per_cell,
-                                  cell_per_block,
-                                  spatial_size, hist_bins)
-
-    out_img, bboxes8 = find_temoc(out_img, ystart, ystop, scale_seq[7], svc, X_scaler, orient, pix_per_cell,
-                                  cell_per_block,
-                                  spatial_size, hist_bins)
-
-    out_img, bboxes9 = find_temoc(out_img, ystart, ystop, scale_seq[8], svc, X_scaler, orient, pix_per_cell,
-                                  cell_per_block,
-                                  spatial_size, hist_bins)
-
-    out_img, bboxes10 = find_temoc(out_img, ystart, ystop, scale_seq[9], svc, X_scaler, orient, pix_per_cell,
-                                   cell_per_block,
-                                   spatial_size, hist_bins)
-    bboxes.extend(bboxes1)
-    bboxes.extend(bboxes2)
-    bboxes.extend(bboxes3)
-    bboxes.extend(bboxes4)
-    bboxes.extend(bboxes5)
-    bboxes.extend(bboxes6)
-    bboxes.extend(bboxes7)
-    bboxes.extend(bboxes8)
-    bboxes.extend(bboxes9)
-    bboxes.extend(bboxes10)
-
-    return out_img, bboxes
+# def apply_sliding_window(image, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size, hist_bins):
+#     #     apply to different scales
+#     bboxes = []
+#     ystart = 300
+#     ystop = 650
+#     out_img, bboxes1 = find_temoc(image, ystart, ystop, scale_seq[0], svc, X_scaler, orient, pix_per_cell,
+#                                   cell_per_block,
+#                                   spatial_size, hist_bins)
+#
+#     out_img, bboxes2 = find_temoc(out_img, ystart, ystop, scale_seq[1], svc, X_scaler, orient, pix_per_cell,
+#                                   cell_per_block,
+#                                   spatial_size, hist_bins)
+#
+#     out_img, bboxes3 = find_temoc(out_img, ystart, ystop, scale_seq[2], svc, X_scaler, orient, pix_per_cell,
+#                                   cell_per_block,
+#                                   spatial_size, hist_bins)
+#
+#     out_img, bboxes4 = find_temoc(out_img, ystart, ystop, scale_seq[3], svc, X_scaler, orient, pix_per_cell,
+#                                   cell_per_block,
+#                                   spatial_size, hist_bins)
+#
+#     out_img, bboxes5 = find_temoc(out_img, ystart, ystop, scale_seq[4], svc, X_scaler, orient, pix_per_cell,
+#                                   cell_per_block,
+#                                   spatial_size, hist_bins)
+#
+#     out_img, bboxes6 = find_temoc(out_img, ystart, ystop, scale_seq[5], svc, X_scaler, orient, pix_per_cell,
+#                                   cell_per_block,
+#                                   spatial_size, hist_bins)
+#
+#     out_img, bboxes7 = find_temoc(out_img, ystart, ystop, scale_seq[6], svc, X_scaler, orient, pix_per_cell,
+#                                   cell_per_block,
+#                                   spatial_size, hist_bins)
+#
+#     out_img, bboxes8 = find_temoc(out_img, ystart, ystop, scale_seq[7], svc, X_scaler, orient, pix_per_cell,
+#                                   cell_per_block,
+#                                   spatial_size, hist_bins)
+#
+#     out_img, bboxes9 = find_temoc(out_img, ystart, ystop, scale_seq[8], svc, X_scaler, orient, pix_per_cell,
+#                                   cell_per_block,
+#                                   spatial_size, hist_bins)
+#
+#     out_img, bboxes10 = find_temoc(out_img, ystart, ystop, scale_seq[9], svc, X_scaler, orient, pix_per_cell,
+#                                    cell_per_block,
+#                                    spatial_size, hist_bins)
+#     bboxes.extend(bboxes1)
+#     bboxes.extend(bboxes2)
+#     bboxes.extend(bboxes3)
+#     bboxes.extend(bboxes4)
+#     bboxes.extend(bboxes5)
+#     bboxes.extend(bboxes6)
+#     bboxes.extend(bboxes7)
+#     bboxes.extend(bboxes8)
+#     bboxes.extend(bboxes9)
+#     bboxes.extend(bboxes10)
+#
+#     return out_img, bboxes
 
 
 def apply_sliding_window_simple(image, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size, hist_bins):
@@ -386,7 +386,7 @@ if __name__ == '__main__':
         heat = add_heat(heat, bboxes)
 
         # Apply threshold to help remove false positives
-        threshold = 2
+        threshold = 4
         heat = apply_threshold(heat, threshold)
 
         # Visualize the heatmap when displaying

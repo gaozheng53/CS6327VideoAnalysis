@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1372b98a-a056-4611-8eae-d9b63ac02790" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hw-4/tries.ipynb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hw-4/Assignment.py" afterPath="$PROJECT_DIR$/src/hw-4/Assignment.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hw-4/test2.py" afterPath="$PROJECT_DIR$/src/hw-4/test2.py" />
@@ -18,8 +17,8 @@
     <SUITE FILE_PATH="coverage/VA_1$VAassignment1_1.coverage" NAME="VAassignment1-1 Coverage Results" MODIFIED="1517441663635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/Practice$VAassignment1_3.coverage" NAME="VAassignment1-3 Coverage Results" MODIFIED="1517377010015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$VAassignment1_2.coverage" NAME="VAassignment1-2 Coverage Results" MODIFIED="1517450425557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-1" />
-    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$version_2.coverage" NAME="version-2 Coverage Results" MODIFIED="1522547604148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-3" />
-    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1522528631350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-4" />
+    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$version_2.coverage" NAME="version-2 Coverage Results" MODIFIED="1522555130596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-3" />
+    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1523475416929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-4" />
     <SUITE FILE_PATH="coverage/Practice$VAAssignment1_6.coverage" NAME="VAAssignment1-6 Coverage Results" MODIFIED="1517440782299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$VAassignment1_3.coverage" NAME="VAassignment1-3 Coverage Results" MODIFIED="1517450430885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-1" />
     <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$Assignment.coverage" NAME="Assignment Coverage Results" MODIFIED="1522511785223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-2" />
@@ -31,52 +30,63 @@
     <SUITE FILE_PATH="coverage/Practice$1.coverage" NAME="1 Coverage Results" MODIFIED="1516207759871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$to_gray.coverage" NAME="to_gray Coverage Results" MODIFIED="1522524336153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-4" />
     <SUITE FILE_PATH="coverage/Practice$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1517286496197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$Assignment__2_.coverage" NAME="Assignment (2) Coverage Results" MODIFIED="1522543307095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-3" />
-    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$Assignment__1_.coverage" NAME="Assignment (1) Coverage Results" MODIFIED="1522542291249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-4" />
+    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$Assignment__2_.coverage" NAME="Assignment (2) Coverage Results" MODIFIED="1523477425928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-3" />
+    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$Assignment__1_.coverage" NAME="Assignment (1) Coverage Results" MODIFIED="1523477524311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-4" />
     <SUITE FILE_PATH="coverage/Practice$test.coverage" NAME="test Coverage Results" MODIFIED="1517376985045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$test.coverage" NAME="test Coverage Results" MODIFIED="1519428131899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-2" />
+    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$test.coverage" NAME="test Coverage Results" MODIFIED="1523417235802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-3" />
     <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$wang.coverage" NAME="wang Coverage Results" MODIFIED="1522531136382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/Practice$VAassignment1_1.coverage" NAME="VAassignment1-1 Coverage Results" MODIFIED="1517376903702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$VAassignment1_1__1_.coverage" NAME="VAassignment1-1 (1) Coverage Results" MODIFIED="1517450412180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$trans.coverage" NAME="trans Coverage Results" MODIFIED="1522557518036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-4" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Assignment.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/hw-4/Assignment.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="388" column="14" lean-forward="false" selection-start-line="388" selection-start-column="14" selection-end-line="388" selection-end-column="14" />
+              <folding>
+                <element signature="e#1326#3580#0" expanded="false" />
+                <element signature="e#1460#3523#0" expanded="false" />
+                <element signature="e#1646#2185#0" expanded="false" />
+                <element signature="e#2288#2403#0" expanded="false" />
+                <element signature="e#2446#2585#0" expanded="false" />
+                <element signature="e#2627#3468#0" expanded="false" />
+                <element signature="e#2739#3141#0" expanded="false" />
+                <element signature="e#2839#3087#0" expanded="false" />
+                <element signature="e#3176#3356#0" expanded="false" />
+                <element signature="e#3702#4523#0" expanded="false" />
+                <element signature="e#3767#4150#0" expanded="false" />
+                <element signature="e#4206#4523#0" expanded="false" />
+                <element signature="e#4567#4776#0" expanded="false" />
+                <element signature="e#4837#5319#0" expanded="false" />
+                <element signature="e#8174#8243#0" expanded="false" />
+                <element signature="e#8964#9068#0" expanded="false" />
+                <element signature="e#11859#12217#0" expanded="false" />
+                <element signature="e#12266#12581#0" expanded="false" />
+                <element signature="e#12622#12943#0" expanded="false" />
+                <element signature="e#12689#12860#0" expanded="false" />
+                <element signature="e#12689#12731#0" expanded="false" />
+                <element signature="e#12991#13114#0" expanded="false" />
+                <element signature="e#13159#13764#0" expanded="false" />
+                <element signature="e#13250#13726#0" expanded="false" />
+                <element signature="e#13939#13983#0" expanded="false" />
+                <element signature="e#15592#15643#0" expanded="false" />
+                <element signature="e#17886#17982#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Assignment.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hw-3/Assignment.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="version-2.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/hw-3/version-2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="632">
-              <caret line="114" column="0" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hw-3/data/README.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InvIntrinsicIR" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hw-3/data/InvIntrinsicIR">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="1100">
+              <caret line="50" column="68" lean-forward="false" selection-start-line="50" selection-start-column="68" selection-end-line="50" selection-end-column="68" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,11 +130,13 @@
         <option value="$PROJECT_DIR$/src/hw-2/Assignment.py" />
         <option value="$PROJECT_DIR$/src/hw-4/to_gray.py" />
         <option value="$PROJECT_DIR$/src/hw-4/test.py" />
-        <option value="$PROJECT_DIR$/src/hw-4/test2.py" />
         <option value="$PROJECT_DIR$/src/hw-3/Assignment.py" />
         <option value="$PROJECT_DIR$/src/wang.py" />
-        <option value="$PROJECT_DIR$/src/hw-4/Assignment.py" />
         <option value="$PROJECT_DIR$/src/hw-3/version-2.py" />
+        <option value="$PROJECT_DIR$/src/hw-4/trans.py" />
+        <option value="$PROJECT_DIR$/src/hw-3/test.py" />
+        <option value="$PROJECT_DIR$/src/hw-4/test2.py" />
+        <option value="$PROJECT_DIR$/src/hw-4/Assignment.py" />
       </list>
     </option>
   </component>
@@ -156,7 +168,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -179,14 +191,13 @@
               <item name="CS6327VideoAnalysis" type="b2602c69:ProjectViewProjectNode" />
               <item name="CS6327VideoAnalysis" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="hw-3" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="hw-4" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -203,6 +214,9 @@
       <recent name="$PROJECT_DIR$/src/hw-4/resizetrain/not" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/hw-4/train_images/not" />
+      <recent name="$PROJECT_DIR$/src/hw-4/resizetrain/not" />
+      <recent name="$PROJECT_DIR$/src/hw-4/train/not" />
       <recent name="$PROJECT_DIR$/src/hw-3" />
       <recent name="$PROJECT_DIR$/src/hw-4/positive_images" />
     </key>
@@ -219,7 +233,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.version-2">
+  <component name="RunManager" selected="Python.Assignment (1)">
     <configuration name="Assignment (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -444,6 +458,24 @@
       <option name="_new_target" value="&quot;&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/hw-3" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CS6327VideoAnalysis" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/hw-3/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="test2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -462,56 +494,38 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="version-2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="trans" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/hw-3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/hw-4" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CS6327VideoAnalysis" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/hw-3/version-2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="wang" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CS6327VideoAnalysis" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/hw-4/wang.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/hw-4/trans.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.test2" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Assignment (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Assignment (2)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.wang" />
-      <item index="4" class="java.lang.String" itemvalue="Python.version-2" />
+      <item index="0" class="java.lang.String" itemvalue="Python.Assignment (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Assignment (2)" />
+      <item index="2" class="java.lang.String" itemvalue="Python.trans" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test2" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.version-2" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Assignment (1)" />
         <item index="1" class="java.lang.String" itemvalue="Python.Assignment (2)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Assignment (1)" />
-        <item index="3" class="java.lang.String" itemvalue="Python.wang" />
-        <item index="4" class="java.lang.String" itemvalue="Python.test2" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test2" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test" />
+        <item index="4" class="java.lang.String" itemvalue="Python.trans" />
       </list>
     </recent_temporary>
   </component>
@@ -532,26 +546,47 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16309524" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41976893" sideWeight="0.50386846" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20121951" sideWeight="0.49613154" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.202" sideWeight="0.49613154" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16309524" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287827" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297619" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41976893" sideWeight="0.50386846" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.202" sideWeight="0.49613154" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16309524" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287827" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -561,109 +596,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/hw-4/positive_images/34.jpg" />
-    <entry file="file://$PROJECT_DIR$/src/hw-4/positive_images/28.jpg" />
-    <entry file="file://$PROJECT_DIR$/src/hw-4/positive_images/23.jpg" />
-    <entry file="file://$PROJECT_DIR$/src/hw-1/VAassignment1-3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/test/6.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/test/10.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/test/11.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/positive_images/1.jpg" />
-    <entry file="file://$PROJECT_DIR$/src/hw-4/test/13.jpeg" />
-    <entry file="file:///usr/local/Cellar/python3/3.6.4_2/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/sklearn/preprocessing/data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="691" column="0" lean-forward="false" selection-start-line="691" selection-start-column="0" selection-end-line="691" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-2/Assignment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="16" column="51" lean-forward="false" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/9.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/14.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/43.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/41.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/38.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/35.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/33.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/31.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/25.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/27.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/23.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/31.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/25.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/27.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/23.jpg" />
     <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/1.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -694,58 +635,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/trans.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="44" lean-forward="false" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/test2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="30" column="16" lean-forward="false" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-          <folding>
-            <element signature="e#1327#3581#0" expanded="false" />
-            <element signature="e#1461#3524#0" expanded="false" />
-            <element signature="e#1647#2186#0" expanded="false" />
-            <element signature="e#2289#2404#0" expanded="false" />
-            <element signature="e#2447#2586#0" expanded="false" />
-            <element signature="e#2628#3469#0" expanded="false" />
-            <element signature="e#2740#3142#0" expanded="false" />
-            <element signature="e#2840#3088#0" expanded="false" />
-            <element signature="e#3177#3357#0" expanded="false" />
-            <element signature="e#3703#4524#0" expanded="false" />
-            <element signature="e#3768#4151#0" expanded="false" />
-            <element signature="e#4207#4524#0" expanded="false" />
-            <element signature="e#4568#4777#0" expanded="false" />
-            <element signature="e#4838#5320#0" expanded="false" />
-            <element signature="e#5448#8961#0" expanded="false" />
-            <element signature="e#5701#5844#0" expanded="false" />
-            <element signature="e#8174#8243#0" expanded="false" />
-            <element signature="e#8455#8932#0" expanded="false" />
-            <element signature="e#8793#8930#0" expanded="false" />
-            <element signature="e#9071#11299#0" expanded="false" />
-            <element signature="e#11415#11739#0" expanded="false" />
-            <element signature="e#11788#12103#0" expanded="false" />
-            <element signature="e#12144#12465#0" expanded="false" />
-            <element signature="e#12211#12382#0" expanded="false" />
-            <element signature="e#12211#12253#0" expanded="false" />
-            <element signature="e#12513#12636#0" expanded="false" />
-            <element signature="e#12681#13286#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw-4/test.py" />
     <entry file="file://$PROJECT_DIR$/src/hw-4/tries-3.31.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
@@ -760,19 +650,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/wang.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="34" column="20" lean-forward="true" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw-4/wang.py" />
     <entry file="file://$PROJECT_DIR$/src/hw-3/data/IntrinsicRGB">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -796,10 +678,128 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/Assignment.py">
+    <entry file="file://$PROJECT_DIR$/src/hw-3/data/InvIntrinsicIR">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="374" column="36" lean-forward="true" selection-start-line="374" selection-start-column="36" selection-end-line="374" selection-end-column="36" />
+        <state relative-caret-position="66">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw-4/train_images/not/20.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/python_stubs/967193849/builtins.py" />
+    <entry file="file://$PROJECT_DIR$/src/hw-3/data/color-63647317628081.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw-3/colorize_image1.jpg" />
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/python_stubs/967193849/cv2/cv2/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/src/hw-3/Assignment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="47" column="36" lean-forward="true" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/python3/3.6.4_2/Frameworks/Python.framework/Versions/3.6/lib/python3.6/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="326" column="38" lean-forward="true" selection-start-line="326" selection-start-column="38" selection-end-line="326" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw-3/data/README.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="50" selection-end-line="0" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw-3/final_detect_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/hw-3/tmp_2.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/hw-3/last_detect_result.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/hw-3/tmp_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw-4/train/not/IMG_4238.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/hw-4/train/not/IMG_8086.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw-4/train/not/IMG_5516.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/not/IMG_8086.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/not/IMG_5516.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/not/IMG_0130.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/12.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw-4/train_images/not/IMG_0129.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw-4/train_images/not/IMG_0130.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw-4/train_images/not/IMG_5516.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw-3/test.py" />
+    <entry file="file://$PROJECT_DIR$/src/hw-3/first_detect_result.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw-3/colorize_1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw-3/data/TransformationD-C">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw-4/trans.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw-4/test2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="391" column="37" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="407" selection-end-column="82" />
           <folding>
             <element signature="e#1324#3578#0" expanded="false" />
             <element signature="e#1458#3521#0" expanded="false" />
@@ -817,90 +817,70 @@
             <element signature="e#4835#5317#0" expanded="false" />
             <element signature="e#5445#8957#0" expanded="false" />
             <element signature="e#5698#5841#0" expanded="false" />
+            <element signature="e#7034#8928#0" expanded="false" />
+            <element signature="e#7072#8928#0" expanded="false" />
             <element signature="e#8170#8239#0" expanded="false" />
             <element signature="e#8451#8928#0" expanded="false" />
             <element signature="e#8789#8926#0" expanded="false" />
             <element signature="e#9067#11636#0" expanded="false" />
+            <element signature="e#11753#12111#0" expanded="false" />
             <element signature="e#12160#12475#0" expanded="false" />
             <element signature="e#12516#12837#0" expanded="false" />
             <element signature="e#12583#12754#0" expanded="false" />
             <element signature="e#12583#12625#0" expanded="false" />
             <element signature="e#12885#13008#0" expanded="false" />
             <element signature="e#13053#13658#0" expanded="false" />
+            <element signature="e#13144#13620#0" expanded="false" />
+            <element signature="e#13833#13877#0" expanded="false" />
+            <element signature="e#15486#15537#0" expanded="false" />
+            <element signature="e#17780#17876#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-3/data/InvIntrinsicIR">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/train_images/not/20.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/python_stubs/967193849/cv2/cv2/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="8105" column="16" lean-forward="false" selection-start-line="8105" selection-start-column="4" selection-end-line="8105" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-3/tmp_1.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-3/tmp_2.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hw-3/Assignment.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="26" />
-          <folding />
+        <state relative-caret-position="1100">
+          <caret line="50" column="68" lean-forward="false" selection-start-line="50" selection-start-column="68" selection-end-line="50" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-3/data/README.txt">
+    <entry file="file://$PROJECT_DIR$/src/hw-4/Assignment.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/python_stubs/967193849/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="5048" column="8" lean-forward="false" selection-start-line="5048" selection-start-column="8" selection-end-line="5048" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-3/data/color-63647317628081.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-3/colorize_image1.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-3/version-2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="114" column="0" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="336">
+          <caret line="388" column="14" lean-forward="false" selection-start-line="388" selection-start-column="14" selection-end-line="388" selection-end-column="14" />
+          <folding>
+            <element signature="e#1326#3580#0" expanded="false" />
+            <element signature="e#1460#3523#0" expanded="false" />
+            <element signature="e#1646#2185#0" expanded="false" />
+            <element signature="e#2288#2403#0" expanded="false" />
+            <element signature="e#2446#2585#0" expanded="false" />
+            <element signature="e#2627#3468#0" expanded="false" />
+            <element signature="e#2739#3141#0" expanded="false" />
+            <element signature="e#2839#3087#0" expanded="false" />
+            <element signature="e#3176#3356#0" expanded="false" />
+            <element signature="e#3702#4523#0" expanded="false" />
+            <element signature="e#3767#4150#0" expanded="false" />
+            <element signature="e#4206#4523#0" expanded="false" />
+            <element signature="e#4567#4776#0" expanded="false" />
+            <element signature="e#4837#5319#0" expanded="false" />
+            <element signature="e#8174#8243#0" expanded="false" />
+            <element signature="e#8964#9068#0" expanded="false" />
+            <element signature="e#11859#12217#0" expanded="false" />
+            <element signature="e#12266#12581#0" expanded="false" />
+            <element signature="e#12622#12943#0" expanded="false" />
+            <element signature="e#12689#12860#0" expanded="false" />
+            <element signature="e#12689#12731#0" expanded="false" />
+            <element signature="e#12991#13114#0" expanded="false" />
+            <element signature="e#13159#13764#0" expanded="false" />
+            <element signature="e#13250#13726#0" expanded="false" />
+            <element signature="e#13939#13983#0" expanded="false" />
+            <element signature="e#15592#15643#0" expanded="false" />
+            <element signature="e#17886#17982#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
