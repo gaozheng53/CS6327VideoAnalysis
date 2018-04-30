@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1372b98a-a056-4611-8eae-d9b63ac02790" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hw-4/test2.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hw-4/Assignment.py" afterPath="$PROJECT_DIR$/src/hw-4/Assignment.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hw-4/test2.py" afterPath="$PROJECT_DIR$/src/hw-4/test2.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,76 +15,52 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/VA_1$VAassignment1_1.coverage" NAME="VAassignment1-1 Coverage Results" MODIFIED="1517441663635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/Practice$VAassignment1_3.coverage" NAME="VAassignment1-3 Coverage Results" MODIFIED="1517377010015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$VAassignment1_2.coverage" NAME="VAassignment1-2 Coverage Results" MODIFIED="1517450425557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-1" />
-    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$version_2.coverage" NAME="version-2 Coverage Results" MODIFIED="1522555130596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-3" />
     <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1523475416929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-4" />
-    <SUITE FILE_PATH="coverage/Practice$VAAssignment1_6.coverage" NAME="VAAssignment1-6 Coverage Results" MODIFIED="1517440782299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$VAassignment1_3.coverage" NAME="VAassignment1-3 Coverage Results" MODIFIED="1517450430885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-1" />
-    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$Assignment.coverage" NAME="Assignment Coverage Results" MODIFIED="1522511785223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-2" />
-    <SUITE FILE_PATH="coverage/Practice$Tryout_1.coverage" NAME="Tryout-1 Coverage Results" MODIFIED="1516209275980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/Practice$VAsssignment1_4.coverage" NAME="VAsssignment1-4 Coverage Results" MODIFIED="1517413939838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$code.coverage" NAME="code Coverage Results" MODIFIED="1525121202653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/final" />
     <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$VAAssignment1_6.coverage" NAME="VAAssignment1-6 Coverage Results" MODIFIED="1517450483536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-1" />
-    <SUITE FILE_PATH="coverage/Practice$VAassignment1.coverage" NAME="VAassignment1 Coverage Results" MODIFIED="1517277767133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$VAsssignment1_4_5.coverage" NAME="VAsssignment1-4,5 Coverage Results" MODIFIED="1517450477358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-1" />
-    <SUITE FILE_PATH="coverage/Practice$1.coverage" NAME="1 Coverage Results" MODIFIED="1516207759871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$to_gray.coverage" NAME="to_gray Coverage Results" MODIFIED="1522524336153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-4" />
     <SUITE FILE_PATH="coverage/Practice$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1517286496197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$Assignment__2_.coverage" NAME="Assignment (2) Coverage Results" MODIFIED="1523477425928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-3" />
     <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$Assignment__1_.coverage" NAME="Assignment (1) Coverage Results" MODIFIED="1523477524311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-4" />
-    <SUITE FILE_PATH="coverage/Practice$test.coverage" NAME="test Coverage Results" MODIFIED="1517376985045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$test.coverage" NAME="test Coverage Results" MODIFIED="1523417235802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-3" />
     <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$wang.coverage" NAME="wang Coverage Results" MODIFIED="1522531136382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/Practice$VAassignment1_1.coverage" NAME="VAassignment1-1 Coverage Results" MODIFIED="1517376903702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$VAassignment1_1__1_.coverage" NAME="VAassignment1-1 (1) Coverage Results" MODIFIED="1517450412180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$VAassignment1_2.coverage" NAME="VAassignment1-2 Coverage Results" MODIFIED="1517450425557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-1" />
+    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$version_2.coverage" NAME="version-2 Coverage Results" MODIFIED="1522555130596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-3" />
+    <SUITE FILE_PATH="coverage/Practice$VAAssignment1_6.coverage" NAME="VAAssignment1-6 Coverage Results" MODIFIED="1517440782299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$Assignment.coverage" NAME="Assignment Coverage Results" MODIFIED="1522511785223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-2" />
+    <SUITE FILE_PATH="coverage/Practice$Tryout_1.coverage" NAME="Tryout-1 Coverage Results" MODIFIED="1516209275980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/Practice$VAsssignment1_4.coverage" NAME="VAsssignment1-4 Coverage Results" MODIFIED="1517413939838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/Practice$VAassignment1.coverage" NAME="VAassignment1 Coverage Results" MODIFIED="1517277767133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1525120185900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/final" />
+    <SUITE FILE_PATH="coverage/Practice$1.coverage" NAME="1 Coverage Results" MODIFIED="1516207759871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$to_gray.coverage" NAME="to_gray Coverage Results" MODIFIED="1522524336153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-4" />
+    <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$Assignment__2_.coverage" NAME="Assignment (2) Coverage Results" MODIFIED="1523477425928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-3" />
+    <SUITE FILE_PATH="coverage/Practice$test.coverage" NAME="test Coverage Results" MODIFIED="1517376985045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/CS6327VideoAnalysis$trans.coverage" NAME="trans Coverage Results" MODIFIED="1522557518036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/hw-4" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Assignment.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/hw-4/Assignment.py">
+      <file leaf-file-name="humandetection.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/final/humandetection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="388" column="14" lean-forward="false" selection-start-line="388" selection-start-column="14" selection-end-line="388" selection-end-column="14" />
+            <state relative-caret-position="0">
+              <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
               <folding>
-                <element signature="e#1326#3580#0" expanded="false" />
-                <element signature="e#1460#3523#0" expanded="false" />
-                <element signature="e#1646#2185#0" expanded="false" />
-                <element signature="e#2288#2403#0" expanded="false" />
-                <element signature="e#2446#2585#0" expanded="false" />
-                <element signature="e#2627#3468#0" expanded="false" />
-                <element signature="e#2739#3141#0" expanded="false" />
-                <element signature="e#2839#3087#0" expanded="false" />
-                <element signature="e#3176#3356#0" expanded="false" />
-                <element signature="e#3702#4523#0" expanded="false" />
-                <element signature="e#3767#4150#0" expanded="false" />
-                <element signature="e#4206#4523#0" expanded="false" />
-                <element signature="e#4567#4776#0" expanded="false" />
-                <element signature="e#4837#5319#0" expanded="false" />
-                <element signature="e#8174#8243#0" expanded="false" />
-                <element signature="e#8964#9068#0" expanded="false" />
-                <element signature="e#11859#12217#0" expanded="false" />
-                <element signature="e#12266#12581#0" expanded="false" />
-                <element signature="e#12622#12943#0" expanded="false" />
-                <element signature="e#12689#12860#0" expanded="false" />
-                <element signature="e#12689#12731#0" expanded="false" />
-                <element signature="e#12991#13114#0" expanded="false" />
-                <element signature="e#13159#13764#0" expanded="false" />
-                <element signature="e#13250#13726#0" expanded="false" />
-                <element signature="e#13939#13983#0" expanded="false" />
-                <element signature="e#15592#15643#0" expanded="false" />
-                <element signature="e#17886#17982#0" expanded="false" />
+                <element signature="e#19#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Assignment.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hw-3/Assignment.py">
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/final/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1100">
-              <caret line="50" column="68" lean-forward="false" selection-start-line="50" selection-start-column="68" selection-end-line="50" selection-end-column="68" />
+            <state relative-caret-position="220">
+              <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#23#33#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -137,6 +112,9 @@
         <option value="$PROJECT_DIR$/src/hw-3/test.py" />
         <option value="$PROJECT_DIR$/src/hw-4/test2.py" />
         <option value="$PROJECT_DIR$/src/hw-4/Assignment.py" />
+        <option value="$PROJECT_DIR$/src/final/code.py" />
+        <option value="$PROJECT_DIR$/src/final/test.py" />
+        <option value="$PROJECT_DIR$/src/final/humandetection.py" />
       </list>
     </option>
   </component>
@@ -168,7 +146,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -185,7 +162,7 @@
               <item name="CS6327VideoAnalysis" type="b2602c69:ProjectViewProjectNode" />
               <item name="CS6327VideoAnalysis" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="hw-3" type="462c0819:PsiDirectoryNode" />
+              <item name="final" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CS6327VideoAnalysis" type="b2602c69:ProjectViewProjectNode" />
@@ -197,12 +174,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="vcs.CVS" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -233,7 +211,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Assignment (1)">
+  <component name="RunManager" selected="Python.code">
     <configuration name="Assignment (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -458,20 +436,38 @@
       <option name="_new_target" value="&quot;&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="code" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/hw-3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/final" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CS6327VideoAnalysis" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/hw-3/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/final/humandetection.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/final" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CS6327VideoAnalysis" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/final/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -494,38 +490,20 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="trans" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/hw-4" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CS6327VideoAnalysis" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/hw-4/trans.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.Assignment (1)" />
       <item index="1" class="java.lang.String" itemvalue="Python.Assignment (2)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.trans" />
-      <item index="3" class="java.lang.String" itemvalue="Python.test" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test2" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test2" />
+      <item index="3" class="java.lang.String" itemvalue="Python.code" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Assignment (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Assignment (2)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test2" />
-        <item index="3" class="java.lang.String" itemvalue="Python.test" />
-        <item index="4" class="java.lang.String" itemvalue="Python.trans" />
+        <item index="0" class="java.lang.String" itemvalue="Python.code" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Assignment (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Assignment (2)" />
+        <item index="4" class="java.lang.String" itemvalue="Python.test2" />
       </list>
     </recent_temporary>
   </component>
@@ -546,17 +524,17 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16309524" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16309524" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41976893" sideWeight="0.50386846" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20121951" sideWeight="0.49613154" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20121951" sideWeight="0.49613154" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297619" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -575,17 +553,17 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.202" sideWeight="0.49613154" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2283737" sideWeight="0.49613154" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16309524" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287827" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297619" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,8 +579,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/31.jpg" />
-    <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/25.jpg" />
     <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/27.jpg" />
     <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/23.jpg" />
     <entry file="file://$PROJECT_DIR$/src/hw-4/resizetrain/is/1.jpg">
@@ -636,13 +612,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hw-4/test.py" />
-    <entry file="file://$PROJECT_DIR$/src/hw-4/tries-3.31.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hw-4/.ipynb_checkpoints/tries-checkpoint.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
@@ -702,9 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="381">
           <caret line="47" column="36" lean-forward="true" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -726,16 +692,6 @@
     <entry file="file://$PROJECT_DIR$/src/hw-3/tmp_2.jpg" />
     <entry file="file://$PROJECT_DIR$/src/hw-3/last_detect_result.jpg" />
     <entry file="file://$PROJECT_DIR$/src/hw-3/tmp_1.jpg" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hw-4/train/not/IMG_4238.jpg" />
     <entry file="file://$PROJECT_DIR$/src/hw-4/train/not/IMG_8086.jpg">
       <provider selected="true" editor-type-id="images">
@@ -788,70 +744,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw-3/Assignment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1078">
+          <caret line="50" column="68" lean-forward="false" selection-start-line="50" selection-start-column="68" selection-end-line="50" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="22">
+            <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/hw-4/trans.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-4/test2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="391" column="37" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="407" selection-end-column="82" />
-          <folding>
-            <element signature="e#1324#3578#0" expanded="false" />
-            <element signature="e#1458#3521#0" expanded="false" />
-            <element signature="e#1644#2183#0" expanded="false" />
-            <element signature="e#2286#2401#0" expanded="false" />
-            <element signature="e#2444#2583#0" expanded="false" />
-            <element signature="e#2625#3466#0" expanded="false" />
-            <element signature="e#2737#3139#0" expanded="false" />
-            <element signature="e#2837#3085#0" expanded="false" />
-            <element signature="e#3174#3354#0" expanded="false" />
-            <element signature="e#3700#4521#0" expanded="false" />
-            <element signature="e#3765#4148#0" expanded="false" />
-            <element signature="e#4204#4521#0" expanded="false" />
-            <element signature="e#4565#4774#0" expanded="false" />
-            <element signature="e#4835#5317#0" expanded="false" />
-            <element signature="e#5445#8957#0" expanded="false" />
-            <element signature="e#5698#5841#0" expanded="false" />
-            <element signature="e#7034#8928#0" expanded="false" />
-            <element signature="e#7072#8928#0" expanded="false" />
-            <element signature="e#8170#8239#0" expanded="false" />
-            <element signature="e#8451#8928#0" expanded="false" />
-            <element signature="e#8789#8926#0" expanded="false" />
-            <element signature="e#9067#11636#0" expanded="false" />
-            <element signature="e#11753#12111#0" expanded="false" />
-            <element signature="e#12160#12475#0" expanded="false" />
-            <element signature="e#12516#12837#0" expanded="false" />
-            <element signature="e#12583#12754#0" expanded="false" />
-            <element signature="e#12583#12625#0" expanded="false" />
-            <element signature="e#12885#13008#0" expanded="false" />
-            <element signature="e#13053#13658#0" expanded="false" />
-            <element signature="e#13144#13620#0" expanded="false" />
-            <element signature="e#13833#13877#0" expanded="false" />
-            <element signature="e#15486#15537#0" expanded="false" />
-            <element signature="e#17780#17876#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hw-3/Assignment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1100">
-          <caret line="50" column="68" lean-forward="false" selection-start-line="50" selection-start-column="68" selection-end-line="50" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/src/hw-4/test2.py" />
+    <entry file="file://$PROJECT_DIR$/src/hw-4/tries-3.31.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hw-4/Assignment.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="388" column="14" lean-forward="false" selection-start-line="388" selection-start-column="14" selection-end-line="388" selection-end-column="14" />
+        <state relative-caret-position="22">
+          <caret line="119" column="120" lean-forward="false" selection-start-line="119" selection-start-column="120" selection-end-line="119" selection-end-column="120" />
           <folding>
             <element signature="e#1326#3580#0" expanded="false" />
             <element signature="e#1460#3523#0" expanded="false" />
@@ -867,7 +795,14 @@
             <element signature="e#4206#4523#0" expanded="false" />
             <element signature="e#4567#4776#0" expanded="false" />
             <element signature="e#4837#5319#0" expanded="false" />
+            <element signature="e#5447#8961#0" expanded="false" />
+            <element signature="e#5700#5843#0" expanded="false" />
+            <element signature="e#6128#6176#0" expanded="false" />
+            <element signature="e#7038#8932#0" expanded="false" />
+            <element signature="e#7076#8932#0" expanded="false" />
             <element signature="e#8174#8243#0" expanded="false" />
+            <element signature="e#8455#8932#0" expanded="false" />
+            <element signature="e#8793#8930#0" expanded="false" />
             <element signature="e#8964#9068#0" expanded="false" />
             <element signature="e#11859#12217#0" expanded="false" />
             <element signature="e#12266#12581#0" expanded="false" />
@@ -880,6 +815,26 @@
             <element signature="e#13939#13983#0" expanded="false" />
             <element signature="e#15592#15643#0" expanded="false" />
             <element signature="e#17886#17982#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/final/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding>
+            <element signature="e#23#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/final/humandetection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+          <folding>
+            <element signature="e#19#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
