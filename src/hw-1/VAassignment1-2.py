@@ -2,7 +2,7 @@
 
 import cv2
 
-vc = cv2.VideoCapture('../outpy.avi')  # read .avi file
+vc = cv2.VideoCapture(0)  # read .avi file
 c = 1
 
 if vc.isOpened():
@@ -10,9 +10,9 @@ if vc.isOpened():
 else:
     rval = False
 
-timeF = 10  # set frame capture interval
+timeF = 30  # set frame capture interval
 count = 0
-while rval and count<6:  # read frame in loop
+while rval and count<8:  # read frame in loop
     rval, frame = vc.read()
     if c % timeF == 0:  # save each timeF frame
         cv2.imwrite('image' + str(count+1) + '.jpg', frame)  # save as .jpg

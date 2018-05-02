@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../CS6327VideoAnalysis/.idea/CS6327VideoAnalysis.iml" filepath="$PROJECT_DIR$/../CS6327VideoAnalysis/.idea/CS6327VideoAnalysis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/CS6327VideoAnalysis.iml" filepath="$PROJECT_DIR$/.idea/CS6327VideoAnalysis.iml" />
+      <module fileurl="file://$USER_HOME$/Downloads/object-recognition-sift-surf-master/.idea/object-recognition-sift-surf-master.iml" filepath="$USER_HOME$/Downloads/object-recognition-sift-surf-master/.idea/object-recognition-sift-surf-master.iml" />
     </modules>
   </component>
 </project>
