@@ -3,6 +3,9 @@ import numpy as np
 import imutils
 import cv2
 
+BOOK_HEIGHT_INCH = 11.61
+SHRINK_PEOPLE_HEIGHT = 0.95
+
 # define cascade
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier('haarcascade_eye_tree_eyeglasses.xml')
@@ -26,7 +29,6 @@ MIN_MATCH_COUNT_BOOK = 40
 detector1 = cv2.xfeatures2d.SIFT_create(1500)
 detector2 = cv2.xfeatures2d.SIFT_create(1500)
 
-
 FLANN_INDEX_KDITREE = 0
 flannParam = dict(algorithm=FLANN_INDEX_KDITREE, tree=5)
 flann = cv2.FlannBasedMatcher(flannParam, {})
@@ -38,6 +40,7 @@ trainKP, trainDesc = detector1.detectAndCompute(trainImg, None)
 
 trainImg_book = cv2.imread("TrainingData/book.png", 0)
 trainKP_book, trainDesc_book = detector2.detectAndCompute(trainImg_book, None)
+
 
 def get_logo_x(QueryImgBGR):  # 获得logo所在位置的x坐标
     QueryImg = cv2.cvtColor(QueryImgBGR, cv2.COLOR_BGR2GRAY)
@@ -72,6 +75,9 @@ def draw_book(QueryImgBGR):
     queryKP, queryDesc = detector2.detectAndCompute(QueryImg, None)
     matches = flann_book.knnMatch(queryDesc, trainDesc_book, k=2)
     average_x = 0
+    min_h = 1000
+    max_h = 0
+    book_height = 0
     goodMatch = []
     for m, n in matches:
         if m.distance < 0.75 * n.distance:
@@ -89,8 +95,13 @@ def draw_book(QueryImgBGR):
         queryBorder = cv2.perspectiveTransform(trainBorder, H)
         for item in queryBorder[0]:
             average_x += item[0]
+            min_h = min(item[1], min_h)
+            max_h = max(item[1], max_h)
         average_x = average_x / 4
         cv2.polylines(QueryImgBGR, [np.int32(queryBorder)], True, (0, 255, 0), 5)
+        book_height = max_h - min_h
+        # print("book height(px) is : ", book_height)
+    return max(0, book_height), average_x  # 返回这玩意的px高度（检测到则是高度,没有则为0），以及它所在的中心的x左边坐标
 
 
 if __name__ == '__main__':
@@ -100,7 +111,7 @@ if __name__ == '__main__':
         if ret:
             orig = image.copy()
             logo_x = get_logo_x(orig)
-            draw_book(orig)
+            book_height_px, book_x = draw_book(orig)
             gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
             scale = image.shape[1] / shrink_w
@@ -120,15 +131,17 @@ if __name__ == '__main__':
 
             for (xA, yA, xB, yB) in people:
                 # draw bounding boxes for the person
-                if logo_x > xA and logo_x < xB:
-                    cv2.rectangle(orig, (xA, yA), (xB, yB), (0, 255, 0), 5)  # 画人 绿
-                    print("people height = ", yB-yA)
-                    # print("Logo is in x=", logo_x, ",  x range of people is  ", xA, " and ", xB)
+                if logo_x > xA and logo_x < xB and yB - yA > 400:  # todo 可以改成只在xA, xB一小部分的范围内，去除overlap的情况
                     # face detection
                     person_img = orig[yA:yB, xA:xB]
                     gray_person_img = gray[yA:yB, xA:xB]
                     faces = face_cascade.detectMultiScale(gray_person_img, 1.025, 5)
                     for (x, y, w, h) in faces:
+                        cv2.rectangle(orig, (xA, yA), (xB, yB), (0, 255, 0), 5)  # 画人 绿   找到脸了才画人
+                        # print("people height(px) = ", yB-yA)
+                        # print("Logo is in x=", logo_x, ",  x range of people is  ", xA, " and ", xB)
+                        if book_height_px > 0:  # todo 改成只在book放置比较正的时候才输出高度
+                            print("actual height is = ", (yB - yA)*SHRINK_PEOPLE_HEIGHT / book_height_px * BOOK_HEIGHT_INCH)
                         # draw face bounding box
                         cv2.rectangle(person_img, (x, y), (x + w, y + h), (0, 0, 255), 5)  # 画脸  红
 
