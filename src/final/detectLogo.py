@@ -1,25 +1,13 @@
 import cv2
 import numpy as np
-from imutils.object_detection import non_max_suppression
-import imutils
 
-# define cascade
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
 
-# initialize the HOG descriptor/person detector
-hog = cv2.HOGDescriptor()
-hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
+
 
 cam = cv2.VideoCapture(0)
 
-# Get the width and height of frame
-width = int(cam.get(cv2.CAP_PROP_FRAME_WIDTH) + 0.5)
-height = int(cam.get(cv2.CAP_PROP_FRAME_HEIGHT) + 0.5)
 
-shrink_w = 400
-
-MIN_MATCH_COUNT = 50
+MIN_MATCH_COUNT = 25
 
 detector = cv2.xfeatures2d.SIFT_create(1500)
 
@@ -27,7 +15,7 @@ FLANN_INDEX_KDITREE = 0
 flannParam = dict(algorithm=FLANN_INDEX_KDITREE, tree=5)
 flann = cv2.FlannBasedMatcher(flannParam, {})
 
-trainImg = cv2.imread("TrainingData/1(13).jpg", 0)
+trainImg = cv2.imread("TrainingData/far_train.png", 0)
 trainKP, trainDesc = detector.detectAndCompute(trainImg, None)
 
 
@@ -52,13 +40,16 @@ while True:
         h, w = trainImg.shape
         trainBorder = np.float32([[[0, 0], [0, h - 1], [w - 1, h - 1], [w - 1, 0]]])
         queryBorder = cv2.perspectiveTransform(trainBorder, H)
-        # todo 加入遍历数组得到最后平均的x坐标，再加入project.py detect到包括此x坐标的方框，显示出来，然后识别出来脸等
+        # todo 加入project.py detect到包括此x坐标的方框，显示出来，然后识别出来脸等
         average_x = 0
         for item in queryBorder[0]:
             average_x += item[0]
         average_x = average_x / 4
-        print(average_x)
+        print(average_x)   # todo 这个值再除以scale,再继续做project.py里面的处理
         cv2.polylines(QueryImgBGR, [np.int32(queryBorder)], True, (0, 255, 0), 5)
+
+
+
     else:
         print("Not Enough match found- %d/%d" % (len(goodMatch), MIN_MATCH_COUNT))
     cv2.imshow('result', QueryImgBGR)

@@ -47,7 +47,7 @@ while cap.isOpened():
 
         for (xA, yA, xB, yB) in people:
             # draw bounding boxes for the person
-            cv2.rectangle(orig, (xA, yA), (xB, yB), (0, 255, 0), 2)
+            cv2.rectangle(orig, (xA, yA), (xB, yB), (0, 255, 0), 5)
 
             # face detection
             person_img = orig[yA:yB, xA:xB]
@@ -55,13 +55,13 @@ while cap.isOpened():
             faces = face_cascade.detectMultiScale(gray_person_img, 1.025, 5)
             for (x, y, w, h) in faces:
                 # draw face bounding box
-                cv2.rectangle(person_img, (x, y), (x + w, y + h), (0, 0, 255), 2)
+                cv2.rectangle(person_img, (x, y), (x + w, y + h), (0, 0, 255), 5)
 
-                roi_gray = gray_person_img[y:y + h, x:x + w]
+                roi_gray = gray_person_img[y:y + int(h/2), x:x + w]
                 roi_color = person_img[y:y + int(h/2), x:x + w]
                 eyes = eye_cascade.detectMultiScale(roi_gray, 1.025)
                 for (ex, ey, ew, eh) in eyes:
-                    cv2.rectangle(roi_color, (ex, ey), (ex + ew, ey + eh), (0, 0, 255), 2)
+                    cv2.rectangle(roi_color, (ex, ey), (ex + ew, ey + eh), (0, 0, 255), 5)
                 break
 
         # show the output images

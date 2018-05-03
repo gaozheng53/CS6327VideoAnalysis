@@ -10,7 +10,7 @@ if vc.isOpened():
 else:
     rval = False
 
-timeF = 30  # set frame capture interval
+timeF = 40  # set frame capture interval
 count = 0
 while rval and count<8:  # read frame in loop
     rval, frame = vc.read()
