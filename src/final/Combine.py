@@ -21,20 +21,27 @@ shrink_w = 400
 
 # 以下是detect logo的各个定义
 MIN_MATCH_COUNT = 25
+MIN_MATCH_COUNT_BOOK = 40
 
-detector = cv2.xfeatures2d.SIFT_create(1500)
+detector1 = cv2.xfeatures2d.SIFT_create(1500)
+detector2 = cv2.xfeatures2d.SIFT_create(1500)
+
 
 FLANN_INDEX_KDITREE = 0
 flannParam = dict(algorithm=FLANN_INDEX_KDITREE, tree=5)
 flann = cv2.FlannBasedMatcher(flannParam, {})
+flannParam_book = dict(algorithm=FLANN_INDEX_KDITREE, tree=5)
+flann_book = cv2.FlannBasedMatcher(flannParam_book, {})
 
 trainImg = cv2.imread("TrainingData/far_train.png", 0)
-trainKP, trainDesc = detector.detectAndCompute(trainImg, None)
+trainKP, trainDesc = detector1.detectAndCompute(trainImg, None)
 
+trainImg_book = cv2.imread("TrainingData/book.png", 0)
+trainKP_book, trainDesc_book = detector2.detectAndCompute(trainImg_book, None)
 
 def get_logo_x(QueryImgBGR):  # 获得logo所在位置的x坐标
     QueryImg = cv2.cvtColor(QueryImgBGR, cv2.COLOR_BGR2GRAY)
-    queryKP, queryDesc = detector.detectAndCompute(QueryImg, None)
+    queryKP, queryDesc = detector1.detectAndCompute(QueryImg, None)
     matches = flann.knnMatch(queryDesc, trainDesc, k=2)
     average_x = 0
     goodMatch = []
@@ -52,13 +59,38 @@ def get_logo_x(QueryImgBGR):  # 获得logo所在位置的x坐标
         h, w = trainImg.shape
         trainBorder = np.float32([[[0, 0], [0, h - 1], [w - 1, h - 1], [w - 1, 0]]])
         queryBorder = cv2.perspectiveTransform(trainBorder, H)
-        # todo 加入project.py detect到包括此x坐标的方框，显示出来，然后识别出来脸等
         for item in queryBorder[0]:
             average_x += item[0]
         average_x = average_x / 4
     # else:
     #     print("Not Enough match found- %d/%d" % (len(goodMatch), MIN_MATCH_COUNT))
     return average_x
+
+
+def draw_book(QueryImgBGR):
+    QueryImg = cv2.cvtColor(QueryImgBGR, cv2.COLOR_BGR2GRAY)
+    queryKP, queryDesc = detector2.detectAndCompute(QueryImg, None)
+    matches = flann_book.knnMatch(queryDesc, trainDesc_book, k=2)
+    average_x = 0
+    goodMatch = []
+    for m, n in matches:
+        if m.distance < 0.75 * n.distance:
+            goodMatch.append(m)
+    if len(goodMatch) > MIN_MATCH_COUNT_BOOK:
+        tp = []
+        qp = []
+        for m in goodMatch:
+            tp.append(trainKP_book[m.trainIdx].pt)
+            qp.append(queryKP[m.queryIdx].pt)
+        tp, qp = np.float32((tp, qp))
+        H, status = cv2.findHomography(tp, qp, cv2.RANSAC, 3.0)
+        h, w = trainImg_book.shape
+        trainBorder = np.float32([[[0, 0], [0, h - 1], [w - 1, h - 1], [w - 1, 0]]])
+        queryBorder = cv2.perspectiveTransform(trainBorder, H)
+        for item in queryBorder[0]:
+            average_x += item[0]
+        average_x = average_x / 4
+        cv2.polylines(QueryImgBGR, [np.int32(queryBorder)], True, (0, 255, 0), 5)
 
 
 if __name__ == '__main__':
@@ -68,6 +100,7 @@ if __name__ == '__main__':
         if ret:
             orig = image.copy()
             logo_x = get_logo_x(orig)
+            draw_book(orig)
             gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
             scale = image.shape[1] / shrink_w
@@ -89,6 +122,7 @@ if __name__ == '__main__':
                 # draw bounding boxes for the person
                 if logo_x > xA and logo_x < xB:
                     cv2.rectangle(orig, (xA, yA), (xB, yB), (0, 255, 0), 5)  # 画人 绿
+                    print("people height = ", yB-yA)
                     # print("Logo is in x=", logo_x, ",  x range of people is  ", xA, " and ", xB)
                     # face detection
                     person_img = orig[yA:yB, xA:xB]
@@ -96,7 +130,7 @@ if __name__ == '__main__':
                     faces = face_cascade.detectMultiScale(gray_person_img, 1.025, 5)
                     for (x, y, w, h) in faces:
                         # draw face bounding box
-                        cv2.rectangle(person_img, (x, y), (x + w, y + h), (0, 0, 255), 5)  # 画脸  蓝
+                        cv2.rectangle(person_img, (x, y), (x + w, y + h), (0, 0, 255), 5)  # 画脸  红
 
                         roi_gray = gray_person_img[y:y + h, x:x + w]
                         roi_color = person_img[y:y + h, x:x + w]
