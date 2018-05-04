@@ -25,7 +25,7 @@ shrink_w = 400
 
 # 以下是detect logo的各个定义
 MIN_MATCH_COUNT = 30
-MIN_MATCH_COUNT_BOOK = 40
+MIN_MATCH_COUNT_BOOK = 45
 
 detector1 = cv2.xfeatures2d.SIFT_create(1500)
 detector2 = cv2.xfeatures2d.SIFT_create(1500)
@@ -172,37 +172,36 @@ if __name__ == '__main__':
                 gray_person_img = gray[yA:yB, xA:xB]
                 if detect_logo(gray_person_img):  # 有logo的人
                     cv2.rectangle(orig, (xA, yA), (xB, yB), (0, 255, 0), 5)  # 画有logo的人 绿
+                    if book_perimeter_px > 0:
+                        actual_height = (yB - yA) * SHRINK_PEOPLE_HEIGHT / book_perimeter_px * BOOK_PERIMETER_INCH
+                        cv2.putText(orig, str(actual_height),
+                                    (xA - 10, yB + 20),
+                                    font,
+                                    fontScale_large,
+                                    (0, 255, 0),
+                                    lineType)
                     faces = face_cascade.detectMultiScale(gray_person_img, 1.025, 5)
                     for (x, y, w, h) in faces:
                         # print("people height(px) = ", yB-yA)
                         # print("Logo is in x=", logo_x, ",  x range of people is  ", xA, " and ", xB)
                         cv2.rectangle(person_img, (x, y), (x + w, y + h), (0, 0, 255), 5)  # 画脸  红
-                        if book_perimeter_px > 0:
-                            actual_height = (yB - yA) * SHRINK_PEOPLE_HEIGHT / book_perimeter_px * BOOK_PERIMETER_INCH
-                            cv2.putText(orig, str(actual_height),
-                                        (xA - 10, yB + 20),
-                                        font,
-                                        fontScale_large,
-                                        (0, 255, 0),
-                                        lineType)
-                            # print("actual height is = ",(yB - yA) * SHRINK_PEOPLE_HEIGHT / book_perimeter_px * BOOK_PERIMETER_INCH)
-                        # draw face bounding box
-
-                        roi_gray = gray_person_img[y:y + h, x:x + w]
+                        roi_gray = gray_person_img[y:y + int(2*h/3), x:x + w]
                         roi_color = person_img[y:y + h, x:x + w]
-                        eyes = eye_cascade.detectMultiScale(roi_gray, 1.025)
+                        large_roi_gray = imutils.resize(roi_gray, width=w*2)
+                        eyes = eye_cascade.detectMultiScale(large_roi_gray, 1.025)
                         for (ex, ey, ew, eh) in eyes:
-                            cv2.rectangle(roi_color, (ex, ey), (ex + ew, ey + eh), (0, 255, 0), 5)  # 画眼睛  绿
+                            cv2.rectangle(roi_color, (int(ex/2), int(ey/2)), (int(ex/2 + ew/2), int(ey/2 + eh/2)), (0, 255, 0), 5)  # 画眼睛  绿
+                        # cv2.imshow("large face_region", large_roi_gray)
                         break
                 else:  # 没有logo的人
-                    cv2.rectangle(orig, (xA, yA), (xB, yB), (0, 255, 255), 5)  # 画没logo的人 白
+                    cv2.rectangle(orig, (xA, yA), (xB, yB), (255, 255, 255), 5)  # 画没logo的人 白
                     if book_perimeter_px > 0:
                         actual_height = (yB - yA) * SHRINK_PEOPLE_HEIGHT / book_perimeter_px * BOOK_PERIMETER_INCH
                         cv2.putText(orig, str(actual_height),
                                     (xA - 10, yB + 20),
                                     font,
                                     fontScale_medium,
-                                    (0, 255, 255),
+                                    (255, 255, 255),
                                     lineType)
 
             # show the output images
