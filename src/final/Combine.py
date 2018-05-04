@@ -5,7 +5,7 @@ import cv2
 from PIL import Image, ImageDraw
 
 BOOK_PERIMETER_INCH = 40
-SHRINK_PEOPLE_HEIGHT = 0.98
+SHRINK_PEOPLE_HEIGHT = 0.9
 
 # define cascade
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
@@ -24,7 +24,7 @@ height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT) + 0.5)
 shrink_w = 400
 
 # 以下是detect logo的各个定义
-MIN_MATCH_COUNT = 20
+MIN_MATCH_COUNT = 30
 MIN_MATCH_COUNT_BOOK = 40
 
 detector1 = cv2.xfeatures2d.SIFT_create(1500)
@@ -80,7 +80,7 @@ lineType = 3
 
 def detect_logo(partimg):
     queryKP, queryDesc = detector2.detectAndCompute(partimg, None)
-    matches = flann_book.knnMatch(queryDesc, trainDesc_book, k=2)
+    matches = flann_book.knnMatch(queryDesc, trainDesc, k=2)
 
     goodMatch = []
     for m, n in matches:
@@ -152,7 +152,6 @@ if __name__ == '__main__':
 
             scale = image.shape[1] / shrink_w
             image = imutils.resize(image, width=min(shrink_w, image.shape[1]))
-
             # detect people in the image
             (rects, weights) = hog.detectMultiScale(image, winStride=(4, 4), scale=1.025)
 
