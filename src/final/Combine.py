@@ -4,8 +4,8 @@ import imutils
 import cv2
 from PIL import Image, ImageDraw
 
-BOOK_PERIMETER_INCH = 36
-SHRINK_PEOPLE_HEIGHT = 1
+BOOK_PERIMETER_INCH = 40
+SHRINK_PEOPLE_HEIGHT = 0.98
 
 # define cascade
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
@@ -24,7 +24,7 @@ height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT) + 0.5)
 shrink_w = 400
 
 # 以下是detect logo的各个定义
-MIN_MATCH_COUNT = 25
+MIN_MATCH_COUNT = 20
 MIN_MATCH_COUNT_BOOK = 40
 
 detector1 = cv2.xfeatures2d.SIFT_create(1500)
@@ -36,7 +36,7 @@ flann = cv2.FlannBasedMatcher(flannParam, {})
 flannParam_book = dict(algorithm=FLANN_INDEX_KDITREE, tree=5)
 flann_book = cv2.FlannBasedMatcher(flannParam_book, {})
 
-trainImg = cv2.imread("TrainingData/far_train.png", 0)
+trainImg = cv2.imread("TrainingData/love.png", 0)
 trainKP, trainDesc = detector1.detectAndCompute(trainImg, None)
 
 trainImg_book = cv2.imread("TrainingData/book.png", 0)
@@ -154,7 +154,7 @@ if __name__ == '__main__':
             image = imutils.resize(image, width=min(shrink_w, image.shape[1]))
 
             # detect people in the image
-            (rects, weights) = hog.detectMultiScale(image, winStride=(4, 4), scale=1.03)
+            (rects, weights) = hog.detectMultiScale(image, winStride=(4, 4), scale=1.025)
 
             # apply non-maxima suppression to the bounding boxes using a
             # fairly large overlap threshold to try to maintain overlapping
@@ -173,7 +173,7 @@ if __name__ == '__main__':
                 gray_person_img = gray[yA:yB, xA:xB]
                 if detect_logo(gray_person_img):  # 有logo的人
                     cv2.rectangle(orig, (xA, yA), (xB, yB), (0, 255, 0), 5)  # 画有logo的人 绿
-                    faces = face_cascade.detectMultiScale(gray_person_img, 1.03, 5)
+                    faces = face_cascade.detectMultiScale(gray_person_img, 1.025, 5)
                     for (x, y, w, h) in faces:
                         # print("people height(px) = ", yB-yA)
                         # print("Logo is in x=", logo_x, ",  x range of people is  ", xA, " and ", xB)
@@ -191,7 +191,7 @@ if __name__ == '__main__':
 
                         roi_gray = gray_person_img[y:y + h, x:x + w]
                         roi_color = person_img[y:y + h, x:x + w]
-                        eyes = eye_cascade.detectMultiScale(roi_gray, 1.03)
+                        eyes = eye_cascade.detectMultiScale(roi_gray, 1.025)
                         for (ex, ey, ew, eh) in eyes:
                             cv2.rectangle(roi_color, (ex, ey), (ex + ew, ey + eh), (0, 255, 0), 5)  # 画眼睛  绿
                         break
