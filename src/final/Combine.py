@@ -2,7 +2,6 @@ from imutils.object_detection import non_max_suppression
 import numpy as np
 import imutils
 import cv2
-from PIL import Image, ImageDraw
 
 BOOK_PERIMETER_INCH = 40
 SHRINK_PEOPLE_HEIGHT = 0.9
@@ -23,7 +22,6 @@ height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT) + 0.5)
 
 shrink_w = 400
 
-# 以下是detect logo的各个定义
 MIN_MATCH_COUNT = 30
 MIN_MATCH_COUNT_BOOK = 45
 
@@ -31,7 +29,7 @@ detector1 = cv2.xfeatures2d.SIFT_create(1500)
 detector2 = cv2.xfeatures2d.SIFT_create(1500)
 
 FLANN_INDEX_KDITREE = 0
-flannParam = dict(algorithm=FLANN_INDEX_KDITREE, tree=5)
+flannParam = dict(algorithm=FLANN_INDEX_KDITREE, tree=5)   # FLANN based Matcher
 flann = cv2.FlannBasedMatcher(flannParam, {})
 flannParam_book = dict(algorithm=FLANN_INDEX_KDITREE, tree=5)
 flann_book = cv2.FlannBasedMatcher(flannParam_book, {})
@@ -48,34 +46,6 @@ fontScale_large = 2.5
 fontScale_medium = 1.5
 # fontColor = (0, 255, 255)
 lineType = 3
-
-
-# def get_logo_x(QueryImgBGR):  # 获得logo所在位置的x坐标
-#     QueryImg = cv2.cvtColor(QueryImgBGR, cv2.COLOR_BGR2GRAY)
-#     queryKP, queryDesc = detector1.detectAndCompute(QueryImg, None)
-#     matches = flann.knnMatch(queryDesc, trainDesc, k=2)
-#     average_x = 0
-#     goodMatch = []
-#     for m, n in matches:
-#         if (m.distance < 0.75 * n.distance):
-#             goodMatch.append(m)
-#     if (len(goodMatch) > MIN_MATCH_COUNT):
-#         tp = []
-#         qp = []
-#         for m in goodMatch:
-#             tp.append(trainKP[m.trainIdx].pt)
-#             qp.append(queryKP[m.queryIdx].pt)
-#         tp, qp = np.float32((tp, qp))
-#         H, status = cv2.findHomography(tp, qp, cv2.RANSAC, 3.0)
-#         h, w = trainImg.shape
-#         trainBorder = np.float32([[[0, 0], [0, h - 1], [w - 1, h - 1], [w - 1, 0]]])
-#         queryBorder = cv2.perspectiveTransform(trainBorder, H)
-#         for item in queryBorder[0]:
-#             average_x += item[0]
-#         average_x = average_x / 4
-#     # else:
-#     #     print("Not Enough match found- %d/%d" % (len(goodMatch), MIN_MATCH_COUNT))
-#     return average_x
 
 
 def detect_logo(partimg):
@@ -123,9 +93,7 @@ def draw_book(QueryImgBGR):
         average_x = average_x / 4
         cv2.polylines(QueryImgBGR, [np.int32(queryBorder)], True, (0, 255, 0), 5)
         perimeter_px = compute_perimeter(queryBorder[0])
-        # book_height = max_h - min_h
-        # print("book height(px) is : ", book_height)
-    return max(0, perimeter_px), average_x  # 返回这玩意的px高度（检测到则是高度,没有则为0），以及它所在的中心的x左边坐标
+    return max(0, perimeter_px), average_x  # 返回这玩意的px周长，以及它所在的中心的x左边坐标
 
 
 def compute_perimeter(queryBorder):
@@ -140,13 +108,11 @@ def compute_perimeter(queryBorder):
 
 
 if __name__ == '__main__':
-    # config real-time playback
     while cap.isOpened():
         ret, image = cap.read()
         if ret:
             orig = image.copy()
             actual_height = 0
-            # logo_x = get_logo_x(orig)
             book_perimeter_px, book_x = draw_book(orig)
             gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
@@ -160,22 +126,18 @@ if __name__ == '__main__':
             # boxes that are still people
             rects = np.array([[x, y, x + w, y + h] for (x, y, w, h) in rects])
             people = non_max_suppression(rects, probs=None, overlapThresh=0.65)
-
             # transfer to original coordination
             people = [[int(c * scale) for c in person] for person in people]
 
             for (xA, yA, xB, yB) in people:
-                # draw bounding boxes for the person
-                # if logo_x > xA and logo_x < xB :
-                # face detection
                 person_img = orig[yA:yB, xA:xB]
                 gray_person_img = gray[yA:yB, xA:xB]
-                if detect_logo(gray_person_img):  # 有logo的人
-                    cv2.rectangle(orig, (xA, yA), (xB, yB), (0, 255, 0), 5)  # 画有logo的人 绿
+                if detect_logo(gray_person_img):  # has logo person
+                    cv2.rectangle(orig, (xA, yA), (xB, yB), (0, 255, 0), 5)
                     if book_perimeter_px > 0:
                         actual_height = (yB - yA) * SHRINK_PEOPLE_HEIGHT / book_perimeter_px * BOOK_PERIMETER_INCH
-                        cv2.putText(orig, str(actual_height),
-                                    (xA - 10, yB + 20),
+                        cv2.putText(orig, "{0:.2f}inch".format(actual_height),
+                                    (xA, yA - 20),
                                     font,
                                     fontScale_large,
                                     (0, 255, 0),
@@ -184,21 +146,21 @@ if __name__ == '__main__':
                     for (x, y, w, h) in faces:
                         # print("people height(px) = ", yB-yA)
                         # print("Logo is in x=", logo_x, ",  x range of people is  ", xA, " and ", xB)
-                        cv2.rectangle(person_img, (x, y), (x + w, y + h), (0, 0, 255), 5)  # 画脸  红
-                        roi_gray = gray_person_img[y:y + int(2*h/3), x:x + w]
+                        cv2.rectangle(person_img, (x, y), (x + w, y + h), (0, 0, 255), 5)  # draw face
+                        roi_gray = gray_person_img[y:y + int(2 * h / 3), x:x + w]
                         roi_color = person_img[y:y + h, x:x + w]
-                        large_roi_gray = imutils.resize(roi_gray, width=w*2)
+                        large_roi_gray = imutils.resize(roi_gray, width=w * 2)
                         eyes = eye_cascade.detectMultiScale(large_roi_gray, 1.025)
                         for (ex, ey, ew, eh) in eyes:
-                            cv2.rectangle(roi_color, (int(ex/2), int(ey/2)), (int(ex/2 + ew/2), int(ey/2 + eh/2)), (0, 255, 0), 5)  # 画眼睛  绿
-                        # cv2.imshow("large face_region", large_roi_gray)
+                            cv2.rectangle(roi_color, (int(ex / 2), int(ey / 2)),
+                                          (int(ex / 2 + ew / 2), int(ey / 2 + eh / 2)), (0, 255, 0), 5)  # draw eyes
                         break
-                else:  # 没有logo的人
-                    cv2.rectangle(orig, (xA, yA), (xB, yB), (255, 255, 255), 5)  # 画没logo的人 白
+                else:  # no logo person
+                    cv2.rectangle(orig, (xA, yA), (xB, yB), (255, 255, 255), 5)
                     if book_perimeter_px > 0:
                         actual_height = (yB - yA) * SHRINK_PEOPLE_HEIGHT / book_perimeter_px * BOOK_PERIMETER_INCH
-                        cv2.putText(orig, str(actual_height),
-                                    (xA - 10, yB + 20),
+                        cv2.putText(orig, "{0:.2f}inch".format(actual_height),
+                                    (xA, yA - 20),
                                     font,
                                     fontScale_medium,
                                     (255, 255, 255),
@@ -206,8 +168,7 @@ if __name__ == '__main__':
 
             # show the output images
             cv2.imshow("Detector", orig)
-
-            if (cv2.waitKey(1) & 0xFF) == ord('q'):  # Hit `q` to exit
+            if (cv2.waitKey(1) & 0xFF) == ord('q'):
                 break
         else:
             break
