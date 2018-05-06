@@ -132,34 +132,39 @@ if __name__ == '__main__':
             for (xA, yA, xB, yB) in people:
                 person_img = orig[yA:yB, xA:xB]
                 gray_person_img = gray[yA:yB, xA:xB]
+                gray_person_upper_body_img = gray[yA:int(yB/3), xA:xB]
                 if detect_logo(gray_person_img):  # has logo person
                     cv2.rectangle(orig, (xA, yA), (xB, yB), (0, 255, 0), 5)
                     if book_perimeter_px > 0:
                         actual_height = (yB - yA) * SHRINK_PEOPLE_HEIGHT / book_perimeter_px * BOOK_PERIMETER_INCH
-                        cv2.putText(orig, "{0:.2f}inch".format(actual_height),
+                        feet = int(actual_height / 12)
+                        inches = int(round(actual_height - 12.0 * feet))
+                        cv2.putText(orig, str(feet)+"ft"+str(inches)+"inches",
                                     (xA, yA - 20),
                                     font,
                                     fontScale_large,
                                     (0, 255, 0),
                                     lineType)
-                    faces = face_cascade.detectMultiScale(gray_person_img, 1.025, 5)
+                    faces = face_cascade.detectMultiScale(gray_person_upper_body_img, 1.025, 5)
                     for (x, y, w, h) in faces:
                         # print("people height(px) = ", yB-yA)
                         # print("Logo is in x=", logo_x, ",  x range of people is  ", xA, " and ", xB)
                         cv2.rectangle(person_img, (x, y), (x + w, y + h), (0, 0, 255), 5)  # draw face
                         roi_gray = gray_person_img[y:y + int(2 * h / 3), x:x + w]
                         roi_color = person_img[y:y + h, x:x + w]
-                        large_roi_gray = imutils.resize(roi_gray, width=w * 2)
+                        large_roi_gray = imutils.resize(roi_gray, width=w * 3)
                         eyes = eye_cascade.detectMultiScale(large_roi_gray, 1.025)
                         for (ex, ey, ew, eh) in eyes:
-                            cv2.rectangle(roi_color, (int(ex / 2), int(ey / 2)),
-                                          (int(ex / 2 + ew / 2), int(ey / 2 + eh / 2)), (0, 255, 0), 5)  # draw eyes
+                            cv2.rectangle(roi_color, (int(ex / 3), int(ey / 3)),
+                                          (int(ex / 3 + ew / 3), int(ey / 3 + eh / 3)), (0, 255, 0), 5)  # draw eyes
                         break
                 else:  # no logo person
                     cv2.rectangle(orig, (xA, yA), (xB, yB), (255, 255, 255), 5)
                     if book_perimeter_px > 0:
                         actual_height = (yB - yA) * SHRINK_PEOPLE_HEIGHT / book_perimeter_px * BOOK_PERIMETER_INCH
-                        cv2.putText(orig, "{0:.2f}inch".format(actual_height),
+                        feet = int(actual_height / 12)
+                        inches = int(round(actual_height - 12.0 * feet))
+                        cv2.putText(orig, str(feet)+"ft"+str(inches)+"inches",
                                     (xA, yA - 20),
                                     font,
                                     fontScale_medium,
