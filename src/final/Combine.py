@@ -139,6 +139,9 @@ if __name__ == '__main__':
                         actual_height = (yB - yA) * SHRINK_PEOPLE_HEIGHT / book_perimeter_px * BOOK_PERIMETER_INCH
                         feet = int(actual_height / 12)
                         inches = int(round(actual_height - 12.0 * feet))
+                        if inches == 12:
+                            feet += 1
+                            inches = 0
                         cv2.putText(orig, str(feet)+"ft"+str(inches)+"inches",
                                     (xA, yA - 20),
                                     font,
@@ -164,6 +167,9 @@ if __name__ == '__main__':
                         actual_height = (yB - yA) * SHRINK_PEOPLE_HEIGHT / book_perimeter_px * BOOK_PERIMETER_INCH
                         feet = int(actual_height / 12)
                         inches = int(round(actual_height - 12.0 * feet))
+                        if inches == 12:
+                            feet += 1
+                            inches = 0
                         cv2.putText(orig, str(feet)+"ft"+str(inches)+"inches",
                                     (xA, yA - 20),
                                     font,
