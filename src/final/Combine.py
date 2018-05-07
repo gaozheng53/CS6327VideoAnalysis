@@ -66,9 +66,6 @@ def draw_book(QueryImgBGR):
     QueryImg = cv2.cvtColor(QueryImgBGR, cv2.COLOR_BGR2GRAY)
     queryKP, queryDesc = detector2.detectAndCompute(QueryImg, None)
     matches = flann_book.knnMatch(queryDesc, trainDesc_book, k=2)
-    average_x = 0
-    min_h = 1000
-    max_h = 0
     perimeter_px = 0
     # book_height = 0
     goodMatch = []
@@ -86,14 +83,9 @@ def draw_book(QueryImgBGR):
         h, w = trainImg_book.shape
         trainBorder = np.float32([[[0, 0], [0, h - 1], [w - 1, h - 1], [w - 1, 0]]])
         queryBorder = cv2.perspectiveTransform(trainBorder, H)
-        for item in queryBorder[0]:
-            average_x += item[0]
-            min_h = min(item[1], min_h)
-            max_h = max(item[1], max_h)
-        average_x = average_x / 4
-        cv2.polylines(QueryImgBGR, [np.int32(queryBorder)], True, (0, 255, 0), 5)
+        cv2.polylines(QueryImgBGR, [np.int32(queryBorder)], True, (0, 255, 0), 5)  # draw this object
         perimeter_px = compute_perimeter(queryBorder[0])
-    return max(0, perimeter_px), average_x  # 返回这玩意的px周长，以及它所在的中心的x左边坐标
+    return max(0, perimeter_px)  # return its perimeter
 
 
 def compute_perimeter(queryBorder):
@@ -103,7 +95,6 @@ def compute_perimeter(queryBorder):
     perimeter += ((array[1][0] - array[2][0]) ** 2 + (array[1][1] - array[2][1]) ** 2) ** 0.5
     perimeter += ((array[2][0] - array[3][0]) ** 2 + (array[2][1] - array[3][1]) ** 2) ** 0.5
     perimeter += ((array[0][0] - array[3][0]) ** 2 + (array[0][1] - array[3][1]) ** 2) ** 0.5
-    # print(array)
     return perimeter
 
 
@@ -113,7 +104,7 @@ if __name__ == '__main__':
         if ret:
             orig = image.copy()
             actual_height = 0
-            book_perimeter_px, book_x = draw_book(orig)
+            book_perimeter_px = draw_book(orig)
             gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
             scale = image.shape[1] / shrink_w
@@ -121,9 +112,7 @@ if __name__ == '__main__':
             # detect people in the image
             (rects, weights) = hog.detectMultiScale(image, winStride=(4, 4), scale=1.025)
 
-            # apply non-maxima suppression to the bounding boxes using a
-            # fairly large overlap threshold to try to maintain overlapping
-            # boxes that are still people
+            # apply non-maxima suppression to deal with overlapping
             rects = np.array([[x, y, x + w, y + h] for (x, y, w, h) in rects])
             people = non_max_suppression(rects, probs=None, overlapThresh=0.65)
             # transfer to original coordination
@@ -150,8 +139,6 @@ if __name__ == '__main__':
                                     lineType)
                     faces = face_cascade.detectMultiScale(gray_person_upper_body_img, 1.025, 5)
                     for (x, y, w, h) in faces:
-                        # print("people height(px) = ", yB-yA)
-                        # print("Logo is in x=", logo_x, ",  x range of people is  ", xA, " and ", xB)
                         cv2.rectangle(person_img, (x, y), (x + w, y + h), (0, 0, 255), 5)  # draw face
                         roi_gray = gray_person_img[y:y + int(2 * h / 3), x:x + w]
                         roi_color = person_img[y:y + h, x:x + w]
