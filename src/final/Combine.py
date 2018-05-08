@@ -161,7 +161,7 @@ if __name__ == '__main__':
                                     (xA, yA - 20),
                                     font,
                                     fontScale_medium,
-                                    (255, 255, 255),
+                                    (255, 0, 0),
                                     lineType)
 
             # show the output images
